@@ -1,16 +1,18 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, lazy, Suspense } from 'react';
 import { Map, List, Heart, Search, Navigation, Share2, MapPin, ArrowLeft, Moon, Sun } from 'lucide-react';
-import MapView from './components/MapView';
 import PlaceCard from './components/PlaceCard';
-import PlaceDetail from './components/PlaceDetail';
 import Filters from './components/Filters';
 import Logo from './components/Logo';
-import AnimatedBackground from './components/AnimatedBackground';
-import SearchBar from './components/SearchBar';
 import { places, centerCoordinates } from './data/places';
 import { itineraries } from './data/itineraries';
 import { useFavorites } from './hooks/useFavorites';
 import './App.css';
+
+// Code-split heavy components
+const MapView = lazy(() => import('./components/MapView'));
+const PlaceDetail = lazy(() => import('./components/PlaceDetail'));
+const AnimatedBackground = lazy(() => import('./components/AnimatedBackground'));
+const SearchBar = lazy(() => import('./components/SearchBar'));
 
 function App() {
   const [viewMode, setViewMode] = useState('grid'); // 'grid', 'map', 'itineraries'
@@ -149,7 +151,9 @@ function App() {
       {/* Header */}
       <header className="header">
         {/* Animated Background */}
-        <AnimatedBackground />
+        <Suspense fallback={<div className="animated-bg-placeholder" />}>
+          <AnimatedBackground />
+        </Suspense>
 
         <div className="header-content">
           <div className="header-title">
@@ -249,13 +253,22 @@ function App() {
 
         {/* Barra di Ricerca Avanzata */}
         <div className="search-container">
-          <SearchBar
-            places={places}
-            onPlaceSelect={(place) => {
-              setSelectedPlace(place);
-              setViewMode('grid');
-            }}
-          />
+          <Suspense fallback={
+            <div className="search-bar-placeholder" style={{
+              height: '50px',
+              background: 'rgba(255, 255, 255, 0.1)',
+              borderRadius: '25px',
+              animation: 'pulse 1.5s ease-in-out infinite'
+            }} />
+          }>
+            <SearchBar
+              places={places}
+              onPlaceSelect={(place) => {
+                setSelectedPlace(place);
+                setViewMode('grid');
+              }}
+            />
+          </Suspense>
         </div>
       </header>
 
@@ -311,13 +324,28 @@ function App() {
                 </div>
               </div>
             )}
-            <MapView
-              places={filteredPlaces}
-              center={mapCenter}
-              onPlaceClick={setSelectedPlace}
-              userLocation={userLocation}
-              itinerary={activeItinerary}
-            />
+            <Suspense fallback={
+              <div className="map-loading" style={{
+                height: '500px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: '#f5f5f5'
+              }}>
+                <div style={{ textAlign: 'center' }}>
+                  <Map size={48} className="loading-icon" style={{ animation: 'pulse 1.5s ease-in-out infinite' }} />
+                  <p>Caricamento mappa...</p>
+                </div>
+              </div>
+            }>
+              <MapView
+                places={filteredPlaces}
+                center={mapCenter}
+                onPlaceClick={setSelectedPlace}
+                userLocation={userLocation}
+                itinerary={activeItinerary}
+              />
+            </Suspense>
           </>
         ) : (
           <div className="places-grid">
@@ -356,10 +384,36 @@ function App() {
 
       {/* Place Detail Modal */}
       {selectedPlace && (
-        <PlaceDetail
-          place={selectedPlace}
-          onClose={() => setSelectedPlace(null)}
-        />
+        <Suspense fallback={
+          <div className="modal-loading" style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(0, 0, 0, 0.5)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 1000
+          }}>
+            <div style={{
+              background: 'white',
+              padding: '40px',
+              borderRadius: '12px',
+              textAlign: 'center'
+            }}>
+              <div style={{ animation: 'pulse 1.5s ease-in-out infinite' }}>
+                Caricamento...
+              </div>
+            </div>
+          </div>
+        }>
+          <PlaceDetail
+            place={selectedPlace}
+            onClose={() => setSelectedPlace(null)}
+          />
+        </Suspense>
       )}
 
       {/* Footer */}
