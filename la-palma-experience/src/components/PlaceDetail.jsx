@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import WeatherWidget from './WeatherWidget';
 import ImageWithFallback from './ImageWithFallback';
+import ShareButton from './ShareButton';
 import './ImageWithFallback.css';
 
 const PlaceDetail = ({ place, onClose }) => {
@@ -263,10 +264,13 @@ const PlaceDetail = ({ place, onClose }) => {
             </div>
           )}
 
-          <button className="maps-button" onClick={openInMaps}>
-            <MapPin size={18} />
-            Apri in Google Maps
-          </button>
+          <div className="modal-actions">
+            <ShareButton place={place} />
+            <button className="maps-button" onClick={openInMaps}>
+              <MapPin size={18} />
+              Apri in Google Maps
+            </button>
+          </div>
         </div>
       </div>
     </div>

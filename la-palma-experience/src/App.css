@@ -1069,6 +1069,21 @@
   margin: 0;
 }
 
+.modal-actions {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  margin-top: var(--space-6);
+}
+
+.modal-actions .share-button-container {
+  flex: 0 0 auto;
+}
+
+.modal-actions .maps-button {
+  flex: 1;
+}
+
 .maps-button {
   display: flex;
   align-items: center;

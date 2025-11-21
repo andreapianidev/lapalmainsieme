@@ -1,0 +1,254 @@
+.share-button-container {
+  position: relative;
+}
+
+.share-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #e63946 0%, #d62839 100%);
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+}
+
+.share-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+}
+
+.share-button:active {
+  transform: translateY(0);
+}
+
+.share-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.share-options {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: slideUp 0.3s ease;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .share-options {
+    position: absolute;
+    bottom: auto;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    width: 320px;
+    border-radius: 16px;
+    animation: scaleIn 0.2s ease;
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+  }
+}
+
+.share-options-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.share-options-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #1a1a2e;
+}
+
+.share-close {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #999;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.share-close:hover {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.share-options-content {
+  padding: 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.share-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  background: white;
+  border: 2px solid #f1f1f1;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1a2e;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.share-option:hover {
+  background: #f8f9fa;
+  border-color: #e63946;
+  transform: translateX(4px);
+}
+
+.share-option:active {
+  transform: scale(0.98);
+}
+
+.share-option:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.share-option svg {
+  flex-shrink: 0;
+}
+
+.share-option span {
+  flex: 1;
+}
+
+/* Social platform colors */
+.share-option.whatsapp:hover {
+  background: #E8F5E9;
+  border-color: #25D366;
+  color: #25D366;
+}
+
+.share-option.telegram:hover {
+  background: #E3F2FD;
+  border-color: #0088cc;
+  color: #0088cc;
+}
+
+.share-option.facebook:hover {
+  background: #E3F2FD;
+  border-color: #1877F2;
+  color: #1877F2;
+}
+
+.share-option.twitter:hover {
+  background: #E3F2FD;
+  border-color: #1DA1F2;
+  color: #1DA1F2;
+}
+
+.share-option.email:hover {
+  background: #FFF3E0;
+  border-color: #FF9800;
+  color: #FF9800;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .share-options {
+    border-radius: 24px 24px 0 0;
+  }
+
+  .share-options-content {
+    padding: 16px 20px 32px;
+  }
+
+  .share-option {
+    padding: 16px 18px;
+    font-size: 16px;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .share-options {
+    background: #2a2a3e;
+  }
+
+  .share-options-header {
+    border-bottom-color: #3a3a4e;
+  }
+
+  .share-options-header h3 {
+    color: #f1f1f1;
+  }
+
+  .share-close {
+    color: #aaa;
+  }
+
+  .share-close:hover {
+    background: #3a3a4e;
+    color: #f1f1f1;
+  }
+
+  .share-option {
+    background: #2a2a3e;
+    border-color: #3a3a4e;
+    color: #f1f1f1;
+  }
+
+  .share-option:hover {
+    background: #3a3a4e;
+  }
+}

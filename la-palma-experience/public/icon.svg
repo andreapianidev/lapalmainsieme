@@ -1,0 +1,35 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sfondo gradiente romantico -->
+  <rect width="512" height="512" rx="128" fill="url(#gradient)"/>
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e63946"/>
+      <stop offset="100%" stop-color="#f1faee"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Palma stilizzata -->
+  <g transform="translate(256, 256)">
+    <!-- Tronco -->
+    <rect x="-20" y="60" width="40" height="140" rx="8" fill="#8B4513" opacity="0.9"/>
+
+    <!-- Foglie palma -->
+    <ellipse cx="-80" cy="20" rx="100" ry="30" fill="#2D5016" transform="rotate(-45 -80 20)"/>
+    <ellipse cx="80" cy="20" rx="100" ry="30" fill="#2D5016" transform="rotate(45 80 20)"/>
+    <ellipse cx="-60" cy="-30" rx="90" ry="25" fill="#3A6B35" transform="rotate(-30 -60 -30)"/>
+    <ellipse cx="60" cy="-30" rx="90" ry="25" fill="#3A6B35" transform="rotate(30 60 -30)"/>
+    <ellipse cx="0" cy="-60" rx="100" ry="28" fill="#4A7C59"/>
+  </g>
+
+  <!-- Cuore romantico -->
+  <g transform="translate(380, 120)">
+    <path d="M 0 20 C -20 0, -40 0, -40 20 C -40 40, -20 60, 0 80 C 20 60, 40 40, 40 20 C 40 0, 20 0, 0 20 Z" fill="#ff006e" opacity="0.95"/>
+    <path d="M 0 20 C -15 5, -30 5, -30 20 C -30 35, -15 50, 0 65 C 15 50, 30 35, 30 20 C 30 5, 15 5, 0 20 Z" fill="#fff" opacity="0.3"/>
+  </g>
+
+  <!-- Onde oceano stilizzate -->
+  <g opacity="0.6">
+    <path d="M 0 380 Q 128 360, 256 380 T 512 380 L 512 512 L 0 512 Z" fill="#457b9d"/>
+    <path d="M 0 400 Q 128 385, 256 400 T 512 400 L 512 512 L 0 512 Z" fill="#1d3557"/>
+  </g>
+</svg>

@@ -6,6 +6,7 @@ import PlaceDetail from './components/PlaceDetail';
 import Filters from './components/Filters';
 import Logo from './components/Logo';
 import AnimatedBackground from './components/AnimatedBackground';
+import SearchBar from './components/SearchBar';
 import { places, centerCoordinates } from './data/places';
 import { itineraries } from './data/itineraries';
 import { useFavorites } from './hooks/useFavorites';
@@ -246,25 +247,15 @@ function App() {
           </div>
         </div>
 
-        {/* Barra di Ricerca */}
+        {/* Barra di Ricerca Avanzata */}
         <div className="search-container">
-          <Search size={20} className="search-icon" />
-          <input
-            type="text"
-            placeholder="Cerca spiagge, trekking, ristoranti..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="search-input"
+          <SearchBar
+            places={places}
+            onPlaceSelect={(place) => {
+              setSelectedPlace(place);
+              setViewMode('grid');
+            }}
           />
-          {searchQuery && (
-            <button
-              className="search-clear"
-              onClick={() => setSearchQuery('')}
-              title="Cancella ricerca"
-            >
-              ×
-            </button>
-          )}
         </div>
       </header>
 
