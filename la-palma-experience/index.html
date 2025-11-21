@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Favicon e Apple Touch Icons -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon-192.png" />
+
+    <!-- Viewport e PWA -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#e63946" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- Manifest PWA -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- SEO Meta Tags -->
+    <title>La Palma Experience - Guida Romantica alle Canarie 🌴💕</title>
+    <meta name="description" content="Scopri i luoghi più romantici e affascinanti dell'isola di La Palma: spiagge paradisiache, trekking mozzafiato, ristoranti tipici e esperienze indimenticabili per coppie." />
+    <meta name="keywords" content="La Palma, Canarie, viaggio romantico, coppie, spiagge, trekking, ristoranti, guida turistica" />
+    <meta name="author" content="La Palma Experience" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://lapalmaexperience.com" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lapalmaexperience.com" />
+    <meta property="og:title" content="La Palma Experience - Guida Romantica alle Canarie" />
+    <meta property="og:description" content="Scopri i luoghi più romantici dell'isola di La Palma: spiagge, trekking, ristoranti e esperienze per coppie." />
+    <meta property="og:image" content="https://lapalmaexperience.com/og-image.jpg" />
+    <meta property="og:locale" content="it_IT" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://lapalmaexperience.com" />
+    <meta name="twitter:title" content="La Palma Experience - Guida Romantica alle Canarie" />
+    <meta name="twitter:description" content="Scopri i luoghi più romantici dell'isola di La Palma" />
+    <meta name="twitter:image" content="https://lapalmaexperience.com/og-image.jpg" />
+
+    <!-- Google / Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelGuide",
+      "name": "La Palma Experience",
+      "description": "Guida romantica ai luoghi più belli di La Palma, Isole Canarie",
+      "url": "https://lapalmaexperience.com",
+      "inLanguage": "it",
+      "about": {
+        "@type": "Place",
+        "name": "La Palma",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "28.6835",
+          "longitude": "-17.7644"
+        }
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('Service Worker registrato con successo:', registration.scope);
+            })
+            .catch((error) => {
+              console.log('Registrazione Service Worker fallita:', error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
