@@ -6,7 +6,63 @@ export const itineraries = [
         places: [48, 7, 47, 51], // Centro Visitatori -> Vulcani -> Echentive -> Zamora
         totalDuration: '1 Giornata',
         difficulty: 'Media',
-        image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80',
+        budget: '40-60€',
+        budgetBreakdown: {
+            food: '25-35€',
+            transport: '10-15€',
+            activities: '5-10€'
+        },
+        bestTime: 'Tutto l\'anno (evitare giorni molto ventosi)',
+        tags: ['natura', 'geologia', 'fotografia', 'educativo'],
+        accommodation: {
+            suggestion: 'Fuencaliente o Los Canarios',
+            options: [
+                { name: 'Hotel Volcán', type: 'Hotel', price: '€€' },
+                { name: 'Apartamentos Volcán', type: 'Appartamento', price: '€' }
+            ]
+        },
+        packing: [
+            'Scarpe da trekking comode',
+            'Giacca antivento',
+            'Crema solare',
+            'Fotocamera',
+            'Acqua (1.5L a persona)',
+            'Snack energetici'
+        ],
+        days: [
+            {
+                day: 1,
+                title: 'Tra Crateri e Colate Laviche',
+                activities: [
+                    { time: '09:00', placeId: 48, duration: '1h', description: 'Visita al Centro Visitatori per capire la storia vulcanica' },
+                    { time: '10:30', placeId: 7, duration: '2h', description: 'Escursione ai crateri del Vulcano San Antonio e Teneguía' },
+                    { time: '13:00', placeId: 47, duration: '1.5h', description: 'Pranzo e passeggiata a Echentive tra le colate' },
+                    { time: '15:00', placeId: 51, duration: '2h', description: 'Relax e conclusione alla Playa de Zamora' }
+                ]
+            }
+        ],
+        faq: [
+            {
+                question: 'È adatto a bambini?',
+                answer: 'Sì, ma tenere sott\'occhio i bambini vicino ai crateri. Il sentiero è facile.'
+            },
+            {
+                question: 'Serve guida?',
+                answer: 'No, i percorsi sono ben segnalati. Ma il Centro Visitatori offre info preziose.'
+            }
+        ],
+        tips: [
+            'Inizia presto per evitare il caldo di mezzogiorno',
+            'Le colate laviche sono molto scure e assorbono calore',
+            'Ottimo per foto al tramonto'
+        ],
+        highlights: [
+            'Vista su entrambi i crateri',
+            'Paesaggio lunare unico',
+            'Flora pioniera che colonizza la lava',
+            'Viste panoramiche sull\'oceano'
+        ]
     },
     {
         id: 'nord-selvaggio',
@@ -162,7 +218,98 @@ export const itineraries = [
         ],
         totalDuration: '3 Giorni',
         difficulty: 'Facile',
-        image: 'https://images.unsplash.com/photo-1502920514313-52581002a659?w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1502920514313-52581002a659?w=800&q=80',
+        budget: '350-500€ (a coppia)',
+        budgetBreakdown: {
+            accommodation: '150-250€ (2 notti)',
+            food: '120-160€',
+            transport: '50-60€',
+            activities: '30-30€'
+        },
+        bestTime: 'Primavera (Marzo-Maggio) e Autunno (Settembre-Ottobre) per clima perfetto',
+        tags: ['romantico', 'coppie', 'relax', 'stelle', 'gastronomia'],
+        accommodation: {
+            suggestion: 'Hotel boutique con vista oceano sulla costa ovest',
+            options: [
+                { name: 'Hotel Hacienda de Abajo', type: 'Hotel Romantico ★★★★', price: '€€€' },
+                { name: 'Casa Rural con piscina', type: 'B&B', price: '€€' },
+                { name: 'Apartamento vista mare', type: 'Airbnb', price: '€-€€' }
+            ]
+        },
+        packing: [
+            'Abbigliamento casual elegante per cene',
+            'Costume da bagno',
+            'Telo mare',
+            'Scarpe comode per passeggiate',
+            'Giacca leggera per la sera',
+            'Fotocamera/smartphone',
+            'Crema solare',
+            'Bottiglia d\'acqua'
+        ],
+        days: [
+            {
+                day: 1,
+                title: 'Arrivo e Magia del Tramonto',
+                activities: [
+                    { time: '15:00', placeId: null, duration: '2h', description: 'Check-in hotel e relax' },
+                    { time: '17:00', placeId: 58, duration: '1.5h', description: 'Tramonto spettacolare al Mirador del Time - porta champagne!' },
+                    { time: '19:30', placeId: 60, duration: '2h', description: 'Cena romantica gourmet al ristorante El Bernegal' },
+                    { time: '22:00', placeId: 50, duration: '1.5h', description: 'Osservazione stelle a Llano de las Cabezadas - momento magico' }
+                ]
+            },
+            {
+                day: 2,
+                title: 'Mare, Natura e Intimità',
+                activities: [
+                    { time: '10:00', placeId: 1, duration: '3h', description: 'Mattinata al Charco Verde - piscina naturale quasi privata' },
+                    { time: '13:30', placeId: null, duration: '1.5h', description: 'Pranzo picnic sulla spiaggia (porta cibo dall\'hotel)' },
+                    { time: '15:30', placeId: 69, duration: '2h', description: 'Playa de Nogales - spiaggia selvaggia e romantica' },
+                    { time: '18:00', placeId: 55, duration: '1h', description: 'Passeggiata al Salto del Enamorado (Cascata degli Innamorati)' },
+                    { time: '20:00', placeId: 49, duration: '2h', description: 'Cena tradizionale canaria alla Casa Osmunda' }
+                ]
+            },
+            {
+                day: 3,
+                title: 'Sapori e Ricordi',
+                activities: [
+                    { time: '10:00', placeId: 61, duration: '2h', description: 'Degustazione vini vulcanici alla Bodega Noelia' },
+                    { time: '12:30', placeId: 75, duration: '1.5h', description: 'Shopping al mercatino locale per souvenir' },
+                    { time: '14:00', placeId: null, duration: '1h', description: 'Pranzo leggero e checkout' },
+                    { time: '17:00', placeId: 56, duration: '1.5h', description: 'Ultimo tramonto memorabile al Faro di Fuencaliente' }
+                ]
+            }
+        ],
+        faq: [
+            {
+                question: 'È davvero adatto a coppie?',
+                answer: 'Assolutamente sì! Questo itinerario è pensato per massimizzare momenti intimi e romantici. Luoghi poco affollati, tramonti spettacolari e cene speciali.'
+            },
+            {
+                question: 'Serve noleggiare un\'auto?',
+                answer: 'Sì, indispensabile. La libertà di muoversi vi permetterà di godervi i momenti senza stress.'
+            },
+            {
+                question: 'Budget realistico per 2 persone?',
+                answer: 'Con hotel 3-4 stelle e ristoranti buoni, calcolate 350-500€ totali per il weekend (escluso volo).'
+            }
+        ],
+        tips: [
+            '💕 Prenotate ristoranti in anticipo, specialmente El Bernegal',
+            '🌅 I tramonti a La Palma sono tra le 18:00 e le 19:30 (varia per stagione)',
+            '🍾 Portate una bottiglia di vino/champagne per il tramonto al Time',
+            '📸 Non dimenticate la fotocamera per le stelle - telefonini non bastano',
+            '🏖️ Charco Verde e Nogales possono essere ventose, controllate meteo',
+            '⭐ Per le stelle, andate dopo le 22:00 e spegnete tutte le luci'
+        ],
+        highlights: [
+            'Tramonti mozzafiato in location magiche',
+            'Piscine naturali quasi private',
+            'Cene romantiche in ristoranti selezionati',
+            'Cielo stellato più bello d\'Europa',
+            'Spiagge selvagge e isolate',
+            'Degustazione vini vulcanici unici',
+            'Momenti intimi lontano dalla folla'
+        ]
     },
     {
         id: 'avventura-vs-relax',
