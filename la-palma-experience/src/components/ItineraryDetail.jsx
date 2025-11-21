@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense, useMemo, useEffect } from 'react';
 import {
   X,
   Clock,
@@ -15,18 +15,43 @@ import {
   ChevronDown,
   ChevronUp,
   Map as MapIcon,
-  Sparkles
+  Sparkles,
+  Navigation,
+  Camera
 } from 'lucide-react';
 import { places } from '../data/places';
+import { calculateItineraryDistance, estimateDrivingTime } from '../utils/distance';
+import { downloadICSFile } from '../utils/calendar';
 import './ItineraryDetail.css';
+
+// Lazy load components for better performance
+const ItineraryMap = lazy(() => import('./ItineraryMap'));
+const PhotoGallery = lazy(() => import('./PhotoGallery'));
+const RatingStars = lazy(() => import('./RatingStars'));
 
 const ItineraryDetail = ({ itinerary, onClose, onPlaceClick, allItineraries }) => {
   const [expandedDay, setExpandedDay] = useState(itinerary.days ? itinerary.days[0]?.day : null);
   const [checkedItems, setCheckedItems] = useState({});
   const [saved, setSaved] = useState(false);
 
+  // Check if itinerary is already saved
+  useEffect(() => {
+    const savedItineraries = JSON.parse(localStorage.getItem('savedItineraries') || '[]');
+    setSaved(savedItineraries.includes(itinerary.id));
+  }, [itinerary.id]);
+
   // Get places data
   const itineraryPlaces = places.filter(p => itinerary.places.includes(p.id));
+
+  // Calculate total distance
+  const distanceInfo = useMemo(() => {
+    return calculateItineraryDistance(places, itinerary.places);
+  }, [itinerary.places]);
+
+  // Estimate driving time
+  const drivingTime = useMemo(() => {
+    return estimateDrivingTime(distanceInfo.totalKm);
+  }, [distanceInfo.totalKm]);
 
   // Badge tags
   const tagEmojis = {
@@ -50,13 +75,22 @@ const ItineraryDetail = ({ itinerary, onClose, onPlaceClick, allItineraries }) =
     }));
   };
 
-  // Save itinerary
+  // Save/Unsave itinerary
   const handleSave = () => {
     const savedItineraries = JSON.parse(localStorage.getItem('savedItineraries') || '[]');
-    if (!savedItineraries.includes(itinerary.id)) {
-      savedItineraries.push(itinerary.id);
-      localStorage.setItem('savedItineraries', JSON.stringify(savedItineraries));
-      setSaved(true);
+
+    if (saved) {
+      // Remove from saved
+      const updatedSaved = savedItineraries.filter(id => id !== itinerary.id);
+      localStorage.setItem('savedItineraries', JSON.stringify(updatedSaved));
+      setSaved(false);
+    } else {
+      // Add to saved
+      if (!savedItineraries.includes(itinerary.id)) {
+        savedItineraries.push(itinerary.id);
+        localStorage.setItem('savedItineraries', JSON.stringify(savedItineraries));
+        setSaved(true);
+      }
     }
   };
 
@@ -127,6 +161,10 @@ const ItineraryDetail = ({ itinerary, onClose, onPlaceClick, allItineraries }) =
               <Share2 size={18} />
               Condividi
             </button>
+            <button className="itinerary-action-btn" onClick={() => downloadICSFile(itinerary)}>
+              <Calendar size={18} />
+              Aggiungi al Calendario
+            </button>
           </div>
 
           {/* Stats Box */}
@@ -161,6 +199,15 @@ const ItineraryDetail = ({ itinerary, onClose, onPlaceClick, allItineraries }) =
                 <span className="stat-value">{itinerary.places.length} luoghi</span>
               </div>
             </div>
+            {distanceInfo.totalKm > 0 && (
+              <div className="stat-item">
+                <Navigation size={20} />
+                <div>
+                  <span className="stat-label">Distanza</span>
+                  <span className="stat-value">{distanceInfo.formatted} · {drivingTime}</span>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Highlights */}
@@ -177,6 +224,33 @@ const ItineraryDetail = ({ itinerary, onClose, onPlaceClick, allItineraries }) =
               </div>
             </section>
           )}
+
+          {/* Photo Gallery */}
+          {itinerary.photos && itinerary.photos.length > 0 && (
+            <section className="itinerary-section">
+              <h2><Camera size={24} /> Galleria Fotografica</h2>
+              <Suspense fallback={<div className="map-loading" style={{height: '300px'}}>Caricamento galleria...</div>}>
+                <PhotoGallery
+                  photos={itinerary.photos}
+                  title={itinerary.title}
+                />
+              </Suspense>
+            </section>
+          )}
+
+          {/* Itinerary Map */}
+          <section className="itinerary-section">
+            <h2><MapIcon size={24} /> Mappa del Percorso</h2>
+            <Suspense fallback={<div className="map-loading">Caricamento mappa...</div>}>
+              <ItineraryMap
+                places={places}
+                itinerary={itinerary}
+                onPlaceClick={onPlaceClick}
+                height="450px"
+                distanceInfo={distanceInfo}
+              />
+            </Suspense>
+          </section>
 
           {/* Timeline Giorno per Giorno */}
           {itinerary.days && itinerary.days.length > 0 && (
@@ -361,6 +435,13 @@ const ItineraryDetail = ({ itinerary, onClose, onPlaceClick, allItineraries }) =
               </div>
             </section>
           )}
+
+          {/* Rating Section */}
+          <section className="itinerary-section">
+            <Suspense fallback={null}>
+              <RatingStars itineraryId={itinerary.id} />
+            </Suspense>
+          </section>
 
           {/* Itinerari Simili */}
           {similarItineraries.length > 0 && (

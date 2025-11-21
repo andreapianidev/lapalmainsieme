@@ -834,3 +834,22 @@
     margin-bottom: 25px;
   }
 }
+
+/* Map Loading State */
+.map-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+  background: #f8f9fa;
+  border-radius: 16px;
+  color: #666;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .map-loading {
+    height: 350px;
+  }
+}

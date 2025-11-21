@@ -1,0 +1,703 @@
+/* ============================================
+   HEADER - Canarian Hero Section
+   Epic entrance with volcanic energy
+   ============================================ */
+
+/* Enhanced header animations */
+.header {
+  animation: headerReveal 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes headerReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo enhanced animations */
+.header-logo {
+  animation: logoEntrance 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s backwards;
+}
+
+@keyframes logoEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.header-logo:hover {
+  animation: logoSpin 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes logoSpin {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.2) rotate(90deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+  }
+  75% {
+    transform: scale(1.15) rotate(270deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(360deg);
+  }
+}
+
+/* Title gradient text effect */
+.header-title h1 {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f0f7ff 30%,
+    #ffd7ba 60%,
+    #ffb4a2 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 5s ease infinite, slideDown 0.8s ease-out;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtitle with typing effect */
+.header-title p {
+  position: relative;
+  animation: subtitleFade 1s ease-out 0.4s backwards;
+}
+
+@keyframes subtitleFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 0.95;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+/* ============================================
+   DARK MODE TOGGLE - Morphing sun/moon
+   ============================================ */
+
+.dark-mode-toggle {
+  position: relative;
+  overflow: hidden;
+  animation: buttonPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.6s backwards;
+}
+
+@keyframes buttonPop {
+  from {
+    opacity: 0;
+    transform: scale(0) rotate(-90deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.dark-mode-toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.dark-mode-toggle:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+.dark-mode-toggle:hover {
+  animation: togglePulse 0.6s ease;
+}
+
+@keyframes togglePulse {
+  0%, 100% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1.15) rotate(20deg);
+  }
+}
+
+.dark-mode-toggle svg {
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.dark-mode-toggle:hover svg {
+  transform: rotate(180deg) scale(1.2);
+}
+
+/* ============================================
+   FAVORITES BADGE - Animated heart
+   ============================================ */
+
+.favorites-badge {
+  animation: buttonPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.7s backwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.favorites-badge::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.favorites-badge:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.favorites-badge svg {
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.favorites-badge:hover svg {
+  transform: scale(1.25) rotate(-15deg);
+  animation: heartBeat 0.8s ease;
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1.25) rotate(-15deg);
+  }
+  15% {
+    transform: scale(1.5) rotate(-10deg);
+  }
+  30% {
+    transform: scale(1.2) rotate(-20deg);
+  }
+  45% {
+    transform: scale(1.4) rotate(-12deg);
+  }
+  60% {
+    transform: scale(1.25) rotate(-18deg);
+  }
+}
+
+.favorites-badge.active {
+  animation: favoriteActivate 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes favoriteActivate {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-8px) scale(1.15) rotate(8deg);
+  }
+  50% {
+    transform: translateY(-4px) scale(0.95) rotate(-4deg);
+  }
+  75% {
+    transform: translateY(-6px) scale(1.08) rotate(4deg);
+  }
+}
+
+/* Count badge pulse */
+.favorites-count {
+  animation: countPulse 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.3s ease;
+}
+
+@keyframes countPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+.favorites-badge:hover .favorites-count {
+  transform: scale(1.1);
+}
+
+/* ============================================
+   VIEW TOGGLE - Morphing buttons
+   ============================================ */
+
+.view-toggle {
+  display: flex;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 6px;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  animation: buttonPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.8s backwards;
+}
+
+.view-toggle button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: transparent;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.view-toggle button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.view-toggle button:hover::before {
+  opacity: 1;
+}
+
+.view-toggle button:hover {
+  transform: translateY(-2px);
+}
+
+.view-toggle button.active {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  color: var(--volcanic-black);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: viewActivate 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes viewActivate {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.15);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.view-toggle button.active svg {
+  animation: iconRotate 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes iconRotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.view-toggle button svg {
+  transition: transform 0.3s ease;
+}
+
+.view-toggle button:hover svg {
+  transform: scale(1.15);
+}
+
+/* Icon-only buttons */
+.icon-button {
+  width: 42px;
+  height: 42px;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   NEAR ME BUTTON - Pulsing location
+   ============================================ */
+
+.near-me-btn {
+  animation: buttonPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.9s backwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.near-me-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: locationPulse 2s ease-in-out infinite;
+  opacity: 0;
+}
+
+.near-me-btn.active::before {
+  opacity: 1;
+}
+
+@keyframes locationPulse {
+  0%, 100% {
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+  }
+  50% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+
+.near-me-btn:hover {
+  animation: locationBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes locationBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2) rotate(15deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(-10deg);
+  }
+  75% {
+    transform: scale(1.15) rotate(5deg);
+  }
+}
+
+.near-me-btn svg {
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1;
+}
+
+.near-me-btn:hover svg {
+  transform: rotate(45deg) scale(1.2);
+}
+
+.near-me-btn.active svg {
+  animation: locationSpin 2s linear infinite;
+}
+
+@keyframes locationSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   SHARE BUTTON - Expanding ripple
+   ============================================ */
+
+.share-btn {
+  animation: buttonPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1s backwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.share-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.share-btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+.share-btn:hover {
+  animation: shareWiggle 0.5s ease;
+}
+
+@keyframes shareWiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(15deg) scale(1.1);
+  }
+}
+
+.share-btn svg {
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.share-btn:hover svg {
+  transform: scale(1.2);
+}
+
+/* ============================================
+   SEARCH CONTAINER - Animated appearance
+   ============================================ */
+
+.search-container {
+  animation: searchSlideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.5s backwards;
+}
+
+@keyframes searchSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ============================================
+   RESPONSIVE HEADER
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-6);
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .view-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    min-height: 240px;
+  }
+
+  .header-title h1 {
+    font-size: var(--text-3xl);
+  }
+
+  .header-title p {
+    font-size: var(--text-base);
+  }
+
+  .header-actions {
+    gap: var(--space-2);
+  }
+
+  .dark-mode-toggle,
+  .near-me-btn,
+  .share-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .view-toggle button {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .icon-button {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    min-height: 200px;
+  }
+
+  .header-title h1 {
+    font-size: var(--text-2xl);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .header-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-title p {
+    font-size: var(--text-sm);
+  }
+
+  .favorites-badge {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+  }
+
+  .view-toggle button span {
+    display: none;
+  }
+
+  .view-toggle {
+    padding: 4px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.dark-mode-toggle:focus-visible,
+.favorites-badge:focus-visible,
+.view-toggle button:focus-visible,
+.near-me-btn:focus-visible,
+.share-btn:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .header-logo,
+  .header-title h1,
+  .header-title p,
+  .dark-mode-toggle,
+  .favorites-badge,
+  .view-toggle,
+  .near-me-btn,
+  .share-btn,
+  .search-container {
+    animation: none !important;
+  }
+
+  .header-title h1 {
+    background: white;
+    -webkit-text-fill-color: white;
+  }
+
+  .near-me-btn::before {
+    animation: none !important;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
+
+/* ============================================
+   DARK MODE SPECIFIC ENHANCEMENTS
+   ============================================ */
+
+.dark-mode .header-title h1 {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #a8daff 30%,
+    #4facfe 60%,
+    #00f2fe 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark-mode .view-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .view-toggle button.active {
+  background: linear-gradient(135deg, var(--ocean-blue) 0%, #2563eb 100%);
+  color: white;
+}

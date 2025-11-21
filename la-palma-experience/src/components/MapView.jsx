@@ -2,6 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet'
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { Heart } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
+import './MapView.css';
 import L from 'leaflet';
 
 // Fix per le icone di Leaflet in React

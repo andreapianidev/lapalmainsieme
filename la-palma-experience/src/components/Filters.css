@@ -1,0 +1,542 @@
+/* ============================================
+   FILTERS - Canarian Navigation Pills
+   Smooth transitions with volcanic energy
+   ============================================ */
+
+.filters-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--filters-background);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  animation: filtersSlideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes filtersSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dark-mode .filters-container {
+  background: rgba(20, 20, 20, 0.95);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Scroll shadow effect */
+.filters-container.scrolled {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================================
+   FILTERS SCROLL - Horizontal scrolling pills
+   ============================================ */
+
+.filters-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+/* Custom scrollbar for filters */
+.filters-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.filters-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 3px;
+}
+
+.filters-scroll::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.filters-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Hide scrollbar on mobile for cleaner look */
+@media (max-width: 768px) {
+  .filters-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .filters-scroll::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ============================================
+   FILTER BUTTON - Animated pills
+   ============================================ */
+
+.filter-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--filter-button-bg);
+  color: var(--filter-button-text);
+  border: 2px solid var(--filter-button-border);
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  animation: filterPillSlideIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) backwards;
+}
+
+/* Stagger animation for each filter pill */
+.filter-button:nth-child(1) { animation-delay: 0.1s; }
+.filter-button:nth-child(2) { animation-delay: 0.15s; }
+.filter-button:nth-child(3) { animation-delay: 0.2s; }
+.filter-button:nth-child(4) { animation-delay: 0.25s; }
+.filter-button:nth-child(5) { animation-delay: 0.3s; }
+.filter-button:nth-child(6) { animation-delay: 0.35s; }
+.filter-button:nth-child(7) { animation-delay: 0.4s; }
+
+@keyframes filterPillSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.8) rotate(-5deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+/* Ripple effect on click */
+.filter-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+  opacity: 0;
+}
+
+.filter-button:active::before {
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+  transition: width 0s, height 0s, opacity 0.3s;
+}
+
+/* Hover state */
+.filter-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  border-color: var(--sunset-orange);
+}
+
+.filter-button:hover .filter-icon {
+  transform: scale(1.2) rotate(12deg);
+}
+
+.filter-button:hover .filter-label {
+  letter-spacing: 0.5px;
+}
+
+/* Active state - Selected filter */
+.filter-button.active {
+  background: linear-gradient(135deg, var(--sunset-orange) 0%, var(--sunset-red) 100%);
+  color: white;
+  border-color: var(--sunset-red);
+  box-shadow: 0 4px 16px rgba(230, 57, 70, 0.4);
+  animation: filterActivate 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes filterActivate {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.15) rotate(5deg);
+  }
+  60% {
+    transform: scale(0.95) rotate(-3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.filter-button.active:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 6px 24px rgba(230, 57, 70, 0.5);
+}
+
+/* Dark mode filter button */
+.dark-mode .filter-button {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--dark-text-primary);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark-mode .filter-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--ocean-blue);
+}
+
+.dark-mode .filter-button.active {
+  background: linear-gradient(135deg, var(--ocean-blue) 0%, #2563eb 100%);
+  border-color: #2563eb;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
+}
+
+/* ============================================
+   FILTER ICON - Emoji animations
+   ============================================ */
+
+.filter-icon {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1;
+}
+
+.filter-button.active .filter-icon {
+  animation: iconBounce 0.6s ease-in-out;
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  25% {
+    transform: scale(1.3) translateY(-4px);
+  }
+  50% {
+    transform: scale(0.9) translateY(0);
+  }
+  75% {
+    transform: scale(1.15) translateY(-2px);
+  }
+}
+
+/* ============================================
+   FILTER LABEL
+   ============================================ */
+
+.filter-label {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: letter-spacing 0.3s ease;
+  z-index: 1;
+}
+
+/* ============================================
+   ROMANTIC TOGGLE - Special heart button
+   ============================================ */
+
+.romantic-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--romantic-toggle-bg);
+  color: var(--romantic-toggle-text);
+  border: 2px solid var(--romantic-toggle-border);
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  animation: romanticSlideIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.45s backwards;
+}
+
+@keyframes romanticSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Pulse effect when not active */
+.romantic-toggle:not(.active) {
+  animation: romanticPulse 3s ease-in-out infinite;
+}
+
+@keyframes romanticPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(230, 57, 70, 0);
+  }
+}
+
+.romantic-toggle:hover {
+  transform: translateY(-3px) scale(1.05);
+  border-color: var(--sunset-red);
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.3);
+}
+
+.romantic-toggle:hover svg {
+  transform: scale(1.2) rotate(-15deg);
+}
+
+/* Active state - Romantic filter enabled */
+.romantic-toggle.active {
+  background: linear-gradient(135deg, #e63946 0%, #d62828 100%);
+  color: white;
+  border-color: #d62828;
+  box-shadow: 0 4px 16px rgba(230, 57, 70, 0.5);
+  animation: romanticActivate 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes romanticActivate {
+  0%, 100% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2) rotate(8deg);
+  }
+  40% {
+    transform: scale(0.9) rotate(-5deg);
+  }
+  60% {
+    transform: scale(1.1) rotate(3deg);
+  }
+  80% {
+    transform: scale(0.95) rotate(-2deg);
+  }
+}
+
+.romantic-toggle.active:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 6px 24px rgba(230, 57, 70, 0.6);
+}
+
+.romantic-toggle.active svg {
+  animation: heartBeat 1.2s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.2);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  30% {
+    transform: scale(1.3);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+.romantic-toggle svg {
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.romantic-toggle span {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Dark mode romantic toggle */
+.dark-mode .romantic-toggle {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--dark-text-primary);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark-mode .romantic-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--sunset-orange);
+}
+
+.dark-mode .romantic-toggle.active {
+  background: linear-gradient(135deg, #e63946 0%, #d62828 100%);
+  color: white;
+  border-color: #d62828;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .filters-container {
+    padding: 16px;
+  }
+
+  .filter-button,
+  .romantic-toggle {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .filter-icon {
+    font-size: 16px;
+  }
+
+  .romantic-toggle svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filters-container {
+    padding: 12px;
+  }
+
+  .filters-scroll {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .filter-button,
+  .romantic-toggle {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .filter-icon {
+    font-size: 14px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.filter-button:focus-visible,
+.romantic-toggle:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .filters-container,
+  .filter-button,
+  .romantic-toggle {
+    animation: none;
+  }
+
+  .filter-button.active .filter-icon,
+  .romantic-toggle.active svg {
+    animation: none;
+  }
+
+  .romantic-toggle:not(.active) {
+    animation: none;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
+
+/* ============================================
+   COUNT BADGES - Number of results
+   ============================================ */
+
+.filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: rgba(255, 255, 255, 0.3);
+  color: currentColor;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 10px;
+  margin-left: 4px;
+  transition: all 0.3s ease;
+}
+
+.filter-button.active .filter-count {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+/* ============================================
+   CLEAR ALL BUTTON - Reset filters
+   ============================================ */
+
+.clear-filters {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px dashed var(--border-color);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: 12px;
+}
+
+.clear-filters:hover {
+  background: rgba(230, 57, 70, 0.1);
+  border-color: var(--sunset-red);
+  color: var(--sunset-red);
+  transform: translateY(-2px);
+}
+
+.clear-filters:active {
+  transform: scale(0.95);
+}
+
+.dark-mode .clear-filters {
+  color: var(--dark-text-secondary);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .clear-filters:hover {
+  background: rgba(230, 57, 70, 0.2);
+  border-color: var(--sunset-red);
+  color: var(--sunset-red);
+}

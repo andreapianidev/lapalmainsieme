@@ -1,6 +1,7 @@
 import { Heart, MapPin, Clock, TrendingUp, Info, Bookmark } from 'lucide-react';
 import ImageWithFallback from './ImageWithFallback';
 import './ImageWithFallback.css';
+import './PlaceCard.css';
 
 const PlaceCard = ({ place, onClick, isFavorite, onToggleFavorite }) => {
   const getTypeLabel = (type) => {

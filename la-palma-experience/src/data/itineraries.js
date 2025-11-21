@@ -62,6 +62,24 @@ export const itineraries = [
             'Paesaggio lunare unico',
             'Flora pioniera che colonizza la lava',
             'Viste panoramiche sull\'oceano'
+        ],
+        photos: [
+            {
+                url: 'https://images.unsplash.com/photo-1682686581498-5e85c7b9394b?w=1200&q=80',
+                caption: 'Cratere del Vulcano San Antonio'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80',
+                caption: 'Colate laviche nere di Echentive'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80',
+                caption: 'Paesaggio lunare tra i vulcani'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
+                caption: 'Vista panoramica sull\'oceano'
+            }
         ]
     },
     {
@@ -71,7 +89,13 @@ export const itineraries = [
         places: [6, 52, 55], // Los Tilos -> Cubo de la Galga -> Salto del Enamorado
         totalDuration: 'Mezza Giornata',
         difficulty: 'Facile',
-        image: 'https://images.unsplash.com/photo-1511497584788-876760111969?w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1511497584788-876760111969?w=800&q=80',
+        budget: '20-35€',
+        budgetBreakdown: { food: '15-25€', transport: '5-10€' },
+        bestTime: 'Primavera e Autunno (foresta più verde)',
+        tags: ['natura', 'foresta', 'unesco', 'facile', 'famiglia'],
+        packing: ['Scarpe da trekking', 'Giacca impermeabile', 'Acqua', 'Macchina fotografica'],
+        highlights: ['Foresta Laurisilva UNESCO', 'Cascate nascoste', 'Sentieri magici', 'Biodiversità unica']
     },
     {
         id: 'stelle-e-tramonti',
@@ -80,7 +104,13 @@ export const itineraries = [
         places: [4, 46, 50], // Roque -> Cumbre -> Cabezadas
         totalDuration: 'Sera',
         difficulty: 'Facile',
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        budget: '15-25€',
+        budgetBreakdown: { food: '10-15€', transport: '5-10€' },
+        bestTime: 'Estate (notti più chiare) e inverno (meno nuvole)',
+        tags: ['stelle', 'romantico', 'fotografia', 'natura', 'sera'],
+        packing: ['Giacca calda', 'Coperta', 'Termo con bevanda calda', 'Fotocamera', 'Torcia'],
+        highlights: ['Cielo certificato Starlight', 'Tramonto al Roque', 'Via Lattea visibile', 'Zero inquinamento luminoso']
     },
     {
         id: 'costa-sud-completa',
@@ -89,7 +119,13 @@ export const itineraries = [
         places: [57, 7, 62, 45, 56, 51, 60], // Volcán Martín -> San Antonio -> Punta Faro -> Saline -> Faro -> Zamora -> El Bernegal
         totalDuration: '1 Giornata Intera',
         difficulty: 'Media',
-        image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
+        budget: '60-90€',
+        budgetBreakdown: { food: '35-50€', transport: '15-25€', activities: '10-15€' },
+        bestTime: 'Tutto l\'anno (sud sempre soleggiato)',
+        tags: ['vulcani', 'mare', 'spiagge', 'completo', 'gastronomia'],
+        packing: ['Costume da bagno', 'Scarpe trekking', 'Crema solare', 'Acqua', 'Fotocamera', 'Telo mare'],
+        highlights: ['Vulcani recenti', 'Saline artigianali', 'Faro panoramico', 'Spiagge nere', 'Cena gourmet']
     },
     {
         id: 'gastronomico',
@@ -98,7 +134,23 @@ export const itineraries = [
         places: [75, 61, 49, 60, 71, 54], // Mercatino -> Bodega Noelia -> Casa Osmunda -> El Bernegal -> Chipi-Chipi -> Tasca Catalina
         totalDuration: '1 Giornata',
         difficulty: 'Facile',
-        image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+        budget: '80-120€',
+        budgetBreakdown: {
+            food: '60-90€',
+            transport: '15-20€',
+            activities: '5-10€'
+        },
+        bestTime: 'Tutto l\'anno (mercatini migliori il sabato)',
+        tags: ['gastronomia', 'vino', 'coppie', 'cultura', 'relax'],
+        packing: ['Abbigliamento comodo', 'Borsa per acquisti mercato', 'Macchina fotografica', 'Appetito!'],
+        highlights: ['Vini vulcanici unici', 'Pesce freschissimo', 'Mercato locale autentico', 'Degustazioni guidate', 'Tapas creative'],
+        tips: [
+            'Inizia dal mercatino la mattina presto (9-10h)',
+            'Prenota la Bodega Noelia in anticipo',
+            'Non mangiare troppo a pranzo per goderti tutte le tappe',
+            'Porta contanti per il mercato'
+        ]
     },
     {
         id: 'avventura-natura',
@@ -107,7 +159,23 @@ export const itineraries = [
         places: [5, 74, 65, 59, 72, 69], // Cascata Colores -> Barranco Agua -> Poris -> Charco Azul -> La Fajana -> Nogales
         totalDuration: '2 Giorni',
         difficulty: 'Difficile',
-        image: 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800&q=80',
+        budget: '70-100€',
+        budgetBreakdown: {
+            food: '40-60€',
+            transport: '20-30€',
+            activities: '10-10€'
+        },
+        bestTime: 'Primavera e Estate (sentieri asciutti e mare calmo)',
+        tags: ['avventura', 'trekking', 'natura', 'sportivo', 'difficile'],
+        packing: ['Scarpe trekking professionali', 'Zaino da escursione', 'Acqua 2L+', 'Snack energetici', 'Costume', 'Kit primo soccorso', 'GPS/mappa', 'Giacca impermeabile'],
+        highlights: ['Cascata multicolore unica', 'Trekking impegnativi e selvaggi', 'Piscine naturali remote', 'Villaggio isolato di Poris', 'Zero turismo di massa'],
+        tips: [
+            'Serve ottima forma fisica',
+            'Partire all\'alba per evitare il caldo',
+            'Verificare condizioni meteo e maree',
+            'Portare GPS o app offline maps'
+        ]
     },
     {
         id: 'romantico-completo',
@@ -116,7 +184,24 @@ export const itineraries = [
         places: [4, 58, 61, 49, 73, 1, 56, 50, 55], // Roque -> El Time -> Bodega -> Casa Osmunda -> Stelle -> Charco Verde -> Faro -> Cabezadas -> Salto Enamorado
         totalDuration: '3 Giorni',
         difficulty: 'Facile-Media',
-        image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80',
+        budget: '400-600€ (a coppia)',
+        budgetBreakdown: {
+            accommodation: '180-300€ (2 notti)',
+            food: '140-200€',
+            transport: '60-70€',
+            activities: '20-30€'
+        },
+        bestTime: 'Primavera (Marzo-Giugno) e Autunno (Settembre-Novembre)',
+        tags: ['romantico', 'coppie', 'lusso', 'stelle', 'tramonti', 'gastronomia'],
+        packing: ['Abbigliamento elegante casual', 'Costume', 'Giacca per la sera', 'Scarpe comode', 'Fotocamera', 'Coperta per stelle', 'Crema solare'],
+        highlights: ['3 tramonti spettacolari', 'Cielo stellato certificato', 'Cene gourmet romantiche', 'Piscine naturali isolate', 'Degustazione vini vulcanici', 'Cascata degli Innamorati'],
+        tips: [
+            'Prenota hotel con vista oceano',
+            'Ristoranti gourmet: prenotare 2-3 giorni prima',
+            'Porta champagne per i tramonti',
+            'Le stelle si vedono meglio dopo le 22:00'
+        ]
     },
     {
         id: 'settimana-corta',
@@ -144,7 +229,24 @@ export const itineraries = [
         ],
         totalDuration: '5 Giorni',
         difficulty: 'Media',
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        budget: '550-800€ (a coppia)',
+        budgetBreakdown: {
+            accommodation: '250-400€ (4 notti)',
+            food: '200-280€',
+            transport: '80-100€',
+            activities: '20-20€'
+        },
+        bestTime: 'Primavera (Aprile-Giugno) o Autunno (Settembre-Ottobre)',
+        tags: ['completo', 'coppie', 'mix', 'cultura', 'natura', 'mare'],
+        packing: ['Scarpe trekking', 'Costume', 'Giacca', 'Abbigliamento vario', 'Fotocamera', 'Zaino giornaliero', 'Crema solare'],
+        highlights: ['Vedi tutto in 5 giorni', 'Mix perfetto attività/relax', 'Foreste UNESCO e vulcani', 'Miglior cielo stellato d\'Europa', 'Gastronomia locale autentica'],
+        tips: [
+            'Noleggia auto per libertà totale',
+            'Alloggio consigliato: costa ovest (centrale)',
+            'Giorno 4 inizia molto presto per alba al Roque',
+            'Lascia spazio per improvvisare'
+        ]
     },
     {
         id: 'settimana-completa',
@@ -193,7 +295,24 @@ export const itineraries = [
         ],
         totalDuration: '7 Giorni',
         difficulty: 'Varia (Facile-Difficile)',
-        image: 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=800&q=80',
+        budget: '800-1200€ (a coppia)',
+        budgetBreakdown: {
+            accommodation: '350-600€ (6 notti)',
+            food: '300-420€',
+            transport: '120-150€',
+            activities: '30-30€'
+        },
+        bestTime: 'Tutto l\'anno (evita Luglio-Agosto per meno turisti)',
+        tags: ['completo', 'avventura', 'relax', 'coppie', 'natura', 'cultura'],
+        packing: ['Abbigliamento vario', 'Scarpe trekking', 'Costume', 'Giacca impermeabile', 'Zaino grande', 'Fotocamera', 'Kit primo soccorso', 'Power bank'],
+        highlights: ['Esperienza completa 360°', 'Tutti gli ecosistemi dell\'isola', 'Dal mare alla vetta 2426m', 'Mix trekking facili e difficili', 'Gastronomia stellata e locale', 'Zero fretta, massimo relax'],
+        tips: [
+            'Prenota alloggio centrale (costa ovest) per ridurre spostamenti',
+            'Giorno 4 è impegnativo: valuta forma fisica',
+            'Ristoranti gourmet: prenota 3-4 giorni prima',
+            'Lascia un giorno di buffer per meteo'
+        ]
     },
     {
         id: 'weekend-romantico',
@@ -309,6 +428,28 @@ export const itineraries = [
             'Spiagge selvagge e isolate',
             'Degustazione vini vulcanici unici',
             'Momenti intimi lontano dalla folla'
+        ],
+        photos: [
+            {
+                url: 'https://images.unsplash.com/photo-1502920514313-52581002a659?w=1200&q=80',
+                caption: 'Tramonto al Mirador del Time'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
+                caption: 'Cielo stellato certificato Starlight'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80',
+                caption: 'Charco Verde - piscina naturale'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80',
+                caption: 'Cena romantica con vista'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=1200&q=80',
+                caption: 'Degustazione vini vulcanici'
+            }
         ]
     },
     {
@@ -343,6 +484,23 @@ export const itineraries = [
         ],
         totalDuration: '5 Giorni',
         difficulty: 'Media-Alta',
-        image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80',
+        budget: '600-850€ (a coppia)',
+        budgetBreakdown: {
+            accommodation: '250-400€ (4 notti)',
+            food: '220-300€',
+            transport: '100-120€',
+            activities: '30-30€'
+        },
+        bestTime: 'Primavera (Aprile-Giugno) per clima ideale',
+        tags: ['mix', 'coppie', 'avventura', 'relax', 'bilanciato', 'versatile'],
+        packing: ['Scarpe trekking professionali', 'Costume', 'Abbigliamento sportivo', 'Abbigliamento casual elegante', 'Zaino escursione', 'Fotocamera', 'Crema solare'],
+        highlights: ['Perfetto per coppie con gusti diversi', 'Alternanza avventura/relax', 'Nessuno si annoia', 'Trekking impegnativi e momenti zen', 'Equilibrio perfetto'],
+        tips: [
+            'Chi non ama trekking può saltare attività avventura',
+            'Giorni relax ideali per recuperare energie',
+            'Prenota massaggio spa per giorno 4',
+            'Flessibilità è la chiave'
+        ]
     }
 ];

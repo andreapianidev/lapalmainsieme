@@ -1,4 +1,5 @@
 import { Heart, MapPin } from 'lucide-react';
+import './Filters.css';
 
 const Filters = ({ activeFilter, onFilterChange, showOnlyRomantic, onRomanticToggle }) => {
   const filters = [

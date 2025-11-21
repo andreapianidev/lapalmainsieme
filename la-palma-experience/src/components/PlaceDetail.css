@@ -1,0 +1,793 @@
+/* ============================================
+   PLACE DETAIL MODAL - Canarian Cinema
+   Immersive experience with fluid animations
+   ============================================ */
+
+/* Modal Overlay - Fade in backdrop */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+  animation: overlayFadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+/* Modal Content - Slide up with scale */
+.modal-content {
+  position: relative;
+  background: var(--card-background);
+  border-radius: 24px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.3),
+              0 16px 32px rgba(0, 0, 0, 0.2);
+  animation: modalSlideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Dark mode modal */
+.dark-mode .modal-content {
+  background: var(--dark-card-bg);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.6),
+              0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
+   CLOSE BUTTON - Morphing X
+   ============================================ */
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: white;
+  animation: closeButtonPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s backwards;
+}
+
+@keyframes closeButtonPop {
+  from {
+    opacity: 0;
+    transform: scale(0) rotate(-90deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.modal-close:hover {
+  background: rgba(230, 57, 70, 0.9);
+  border-color: rgba(230, 57, 70, 1);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 4px 16px rgba(230, 57, 70, 0.4);
+}
+
+.modal-close:active {
+  transform: rotate(90deg) scale(0.95);
+}
+
+.modal-close svg {
+  transition: transform 0.3s ease;
+}
+
+.modal-close:hover svg {
+  transform: rotate(90deg);
+}
+
+/* ============================================
+   MODAL IMAGE - Hero with overlay gradient
+   ============================================ */
+
+.modal-image {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: imageZoomIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes imageZoomIn {
+  from {
+    transform: scale(1.2);
+    filter: blur(10px) brightness(0.8);
+  }
+  to {
+    transform: scale(1);
+    filter: blur(0px) brightness(1);
+  }
+}
+
+.modal-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 32px 32px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    transparent 100%
+  );
+  color: white;
+  animation: overlaySlideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s backwards;
+}
+
+@keyframes overlaySlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-image-overlay h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  animation: titleSlideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s backwards;
+}
+
+@keyframes titleSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.modal-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  animation: badgesSlideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s backwards;
+}
+
+@keyframes badgesSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-type-badge,
+.modal-romantic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--volcanic-black);
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.modal-romantic-badge {
+  background: linear-gradient(135deg, rgba(230, 57, 70, 0.95) 0%, rgba(214, 40, 40, 0.95) 100%);
+  color: white;
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(230, 57, 70, 0.6);
+  }
+}
+
+/* ============================================
+   MODAL BODY - Scrollable content
+   ============================================ */
+
+.modal-body {
+  padding: 32px;
+  overflow-y: auto;
+  flex: 1;
+  animation: contentFadeIn 0.8s ease 0.4s backwards;
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar */
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+.detail-content {
+  margin-bottom: 32px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin: 24px 0;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .description {
+  color: var(--dark-text-primary);
+}
+
+/* ============================================
+   MODAL SECTIONS
+   ============================================ */
+
+.modal-section {
+  margin-bottom: 28px;
+  padding: 24px;
+  background: var(--section-background);
+  border-radius: 16px;
+  border-left: 4px solid var(--sunset-orange);
+  transition: all 0.3s ease;
+  animation: sectionSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+.modal-section:nth-child(1) { animation-delay: 0.1s; }
+.modal-section:nth-child(2) { animation-delay: 0.15s; }
+.modal-section:nth-child(3) { animation-delay: 0.2s; }
+.modal-section:nth-child(4) { animation-delay: 0.25s; }
+
+@keyframes sectionSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.modal-section:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.dark-mode .modal-section {
+  background: rgba(255, 255, 255, 0.03);
+  border-left-color: var(--ocean-blue);
+}
+
+.modal-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 16px 0;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .modal-section h3 {
+  color: var(--dark-text-primary);
+}
+
+.modal-section h3 svg {
+  color: var(--sunset-orange);
+  transition: transform 0.3s ease;
+}
+
+.modal-section:hover h3 svg {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.ideal-for {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .ideal-for {
+  color: var(--dark-text-secondary);
+}
+
+/* ============================================
+   INFO GRID - Technical details
+   ============================================ */
+
+.modal-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: var(--info-item-bg);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: infoItemPop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) backwards;
+}
+
+.info-item:nth-child(1) { animation-delay: 0.1s; }
+.info-item:nth-child(2) { animation-delay: 0.15s; }
+.info-item:nth-child(3) { animation-delay: 0.2s; }
+.info-item:nth-child(4) { animation-delay: 0.25s; }
+.info-item:nth-child(5) { animation-delay: 0.3s; }
+.info-item:nth-child(6) { animation-delay: 0.35s; }
+
+@keyframes infoItemPop {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.info-item:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.dark-mode .info-item {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.info-item svg {
+  flex-shrink: 0;
+  color: var(--sunset-orange);
+  transition: transform 0.3s ease;
+}
+
+.info-item:hover svg {
+  transform: scale(1.2) rotate(8deg);
+}
+
+.info-item div {
+  flex: 1;
+}
+
+.info-item strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .info-item strong {
+  color: var(--dark-text-secondary);
+}
+
+.info-item p {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .info-item p {
+  color: var(--dark-text-primary);
+}
+
+.info-item.full-width {
+  grid-column: 1 / -1;
+}
+
+/* ============================================
+   FACILITIES & SPECIALTIES - Pills
+   ============================================ */
+
+.facilities-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.facility-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: var(--badge-background);
+  color: var(--badge-text);
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: facilitySlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+.facility-badge:nth-child(1) { animation-delay: 0.05s; }
+.facility-badge:nth-child(2) { animation-delay: 0.1s; }
+.facility-badge:nth-child(3) { animation-delay: 0.15s; }
+.facility-badge:nth-child(4) { animation-delay: 0.2s; }
+.facility-badge:nth-child(5) { animation-delay: 0.25s; }
+.facility-badge:nth-child(6) { animation-delay: 0.3s; }
+
+@keyframes facilitySlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.facility-badge:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: var(--sunset-orange);
+  color: white;
+}
+
+.dark-mode .facility-badge {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--dark-text-primary);
+}
+
+/* ============================================
+   TIPS & LISTS
+   ============================================ */
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tips-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+  animation: listItemSlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+.tips-list li:nth-child(1) { animation-delay: 0.05s; }
+.tips-list li:nth-child(2) { animation-delay: 0.1s; }
+.tips-list li:nth-child(3) { animation-delay: 0.15s; }
+.tips-list li:nth-child(4) { animation-delay: 0.2s; }
+
+@keyframes listItemSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.dark-mode .tips-list li {
+  color: var(--dark-text-secondary);
+}
+
+.tips-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--forest-green);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.tips-section,
+.reservation-section {
+  border-left-color: var(--ocean-blue);
+}
+
+.tips-section p,
+.reservation-section p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .tips-section p,
+.dark-mode .reservation-section p {
+  color: var(--dark-text-secondary);
+}
+
+/* ============================================
+   ACTION BUTTONS - Share & Maps
+   ============================================ */
+
+.modal-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 2px solid var(--border-color);
+  animation: actionsFadeIn 0.8s ease 0.6s backwards;
+}
+
+@keyframes actionsFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dark-mode .modal-actions {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.maps-button {
+  width: 100%;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, var(--ocean-blue) 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.maps-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.maps-button:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.maps-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+}
+
+.maps-button:active {
+  transform: translateY(-1px);
+}
+
+.maps-button svg {
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.maps-button:hover svg {
+  transform: scale(1.15);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .modal-content {
+    max-width: 100%;
+    max-height: 95vh;
+    border-radius: 24px 24px 0 0;
+    animation: modalSlideUpMobile 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes modalSlideUpMobile {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .modal-image {
+    height: 300px;
+  }
+
+  .modal-image-overlay h1 {
+    font-size: 24px;
+  }
+
+  .modal-body {
+    padding: 24px 20px;
+  }
+
+  .modal-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-image {
+    height: 250px;
+  }
+
+  .modal-image-overlay {
+    padding: 24px 20px 20px;
+  }
+
+  .modal-image-overlay h1 {
+    font-size: 20px;
+  }
+
+  .modal-section {
+    padding: 20px 16px;
+  }
+
+  .modal-close {
+    width: 44px;
+    height: 44px;
+    top: 16px;
+    right: 16px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.modal-close:focus-visible,
+.maps-button:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay,
+  .modal-content,
+  .modal-image img,
+  .modal-section,
+  .info-item,
+  .facility-badge,
+  .tips-list li {
+    animation: none;
+  }
+
+  .modal-romantic-badge {
+    animation: none;
+  }
+
+  * {
+    transition: none !important;
+  }
+}

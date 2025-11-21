@@ -19,6 +19,7 @@ import WeatherWidget from './WeatherWidget';
 import ImageWithFallback from './ImageWithFallback';
 import ShareButton from './ShareButton';
 import './ImageWithFallback.css';
+import './PlaceDetail.css';
 
 const PlaceDetail = ({ place, onClose }) => {
   if (!place) return null;
