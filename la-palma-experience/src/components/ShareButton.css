@@ -216,6 +216,50 @@
   .share-option {
     padding: 16px 18px;
     font-size: 16px;
+    min-height: 56px;
+  }
+
+  .share-button {
+    padding: 12px 20px;
+    min-height: 48px;
+  }
+
+  .share-close {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+  .share-options-header {
+    padding: 16px;
+  }
+
+  .share-options-content {
+    padding: 12px 16px 28px;
+  }
+
+  .share-option {
+    padding: 14px 16px;
+    min-height: 52px;
+  }
+}
+
+/* Landscape mode */
+@media (max-height: 500px) and (orientation: landscape) {
+  .share-options {
+    max-height: 70vh;
+  }
+
+  .share-options-content {
+    padding: 12px 16px 24px;
+  }
+
+  .share-option {
+    padding: 12px 16px;
   }
 }
 

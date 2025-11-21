@@ -172,15 +172,22 @@
 @media (max-width: 768px) {
   .search-input {
     font-size: 16px; /* Previene zoom su iOS */
-    padding: 12px 44px 12px 44px;
+    padding: 14px 48px 14px 48px;
+    min-height: 48px;
   }
 
   .search-dropdown {
     max-height: calc(100vh - 200px);
+    border-radius: 12px;
   }
 
   .search-results {
     max-height: calc(100vh - 260px);
+  }
+
+  .search-result-item {
+    padding: 14px 16px;
+    min-height: 56px;
   }
 
   .result-emoji {
@@ -188,7 +195,57 @@
   }
 
   .result-name {
+    font-size: 15px;
+  }
+
+  .search-clear {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 374px) {
+  .search-bar-container {
+    max-width: 100%;
+  }
+
+  .search-input {
+    padding: 12px 44px 12px 44px;
+    font-size: 16px;
+  }
+
+  .search-icon {
+    left: 12px;
+  }
+
+  .search-clear {
+    right: 8px;
+  }
+
+  .result-name {
     font-size: 14px;
+  }
+
+  .result-type {
+    font-size: 12px;
+  }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .search-dropdown {
+    max-height: 60vh;
+  }
+
+  .search-results {
+    max-height: 50vh;
+  }
+
+  .search-result-item {
+    padding: 10px 14px;
   }
 }
 
