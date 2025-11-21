@@ -2,674 +2,648 @@
 
 <div align="center">
 
-![La Palma Hero](https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&h=300&fit=crop&q=80)
+### Scopri la Isla Bonita con la Guida Romantica Definitiva
 
-### Guida Romantica alle Canarie 💕
+**Una Progressive Web App completa per esplorare La Palma, l'isola più bella delle Canarie**
 
-**Scopri 91+ luoghi romantici, trekking mozzafiato e spiagge paradisiache dell'isola più bella delle Canarie**
+[![React](https://img.shields.io/badge/React-19-61dafb?logo=react)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-7-646cff?logo=vite)](https://vite.dev/)
+[![PWA](https://img.shields.io/badge/PWA-Ready-5a0fc8?logo=pwa)](https://web.dev/progressive-web-apps/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-red)](https://github.com/andreapianidev/lapalmainsieme)
 
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
-[![PWA](https://img.shields.io/badge/PWA-Ready-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)](https://web.dev/pwa/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-
-[![Build Status](https://img.shields.io/github/actions/workflow/status/andreapianidev/lapalmainsieme/build.yml?style=flat-square)](https://github.com/andreapianidev/lapalmainsieme/actions)
-[![Code Size](https://img.shields.io/github/languages/code-size/andreapianidev/lapalmainsieme?style=flat-square)](https://github.com/andreapianidev/lapalmainsieme)
-[![Last Commit](https://img.shields.io/github/last-commit/andreapianidev/lapalmainsieme?style=flat-square)](https://github.com/andreapianidev/lapalmainsieme/commits/main)
-[![Stars](https://img.shields.io/github/stars/andreapianidev/lapalmainsieme?style=social)](https://github.com/andreapianidev/lapalmainsieme/stargazers)
-
-[🚀 Demo Live](#) • [📖 Documentazione](#-caratteristiche) • [🐛 Report Bug](https://github.com/andreapianidev/lapalmainsieme/issues) • [💡 Request Feature](https://github.com/andreapianidev/lapalmainsieme/issues)
+[✨ Demo Live](https://lapalmainsieme.netlify.app) · [🐛 Segnala Bug](https://github.com/andreapianidev/lapalmainsieme/issues) · [💡 Richiedi Feature](https://github.com/andreapianidev/lapalmainsieme/issues)
 
 </div>
 
 ---
 
-## 🎬 Demo
+## 📖 Indice
+
+- [Cos'è La Palma Experience](#-cosè-la-palma-experience)
+- [✨ Caratteristiche Principali](#-caratteristiche-principali)
+- [🚀 Quick Start](#-quick-start)
+- [💻 Stack Tecnologico](#-stack-tecnologico)
+- [📱 Funzionalità](#-funzionalità)
+- [🗺️ Cosa Troverai](#️-cosa-troverai)
+- [🤝 Cerchiamo Collaboratori](#-cerchiamo-collaboratori)
+- [📸 Screenshots](#-screenshots)
+- [🛠️ Contribuire](#️-contribuire)
+- [📄 Licenza](#-licenza)
+
+---
+
+## 🌟 Cos'è La Palma Experience?
+
+**La Palma Experience** è una Progressive Web App moderna e completa pensata per coppie e viaggiatori che vogliono scoprire la **Isla Bonita**, l'isola più bella e autentica dell'arcipelago delle Canarie.
+
+Con oltre **91 luoghi selezionati**, mappe interattive, itinerari personalizzati e funzionalità offline, è la tua compagna perfetta per un viaggio indimenticabile a La Palma! 🌺
+
+### 🎯 Perché questa App?
+
+- 💕 **Per Coppie**: Luoghi romantici, tramonti mozzafiato, cene gourmet vista oceano
+- 🥾 **Per Avventurieri**: Trekking nella Caldera, foreste UNESCO, vulcani attivi
+- 🏖️ **Per Amanti del Mare**: Piscine naturali, spiagge di sabba nera, grotte marine
+- 🍷 **Per Buongustai**: Ristoranti tipici, vini vulcanici, cucina canaria autentica
+- ✨ **Per Sognatori**: Stargazing nei cieli più bui d'Europa, albe sulla caldera
+
+---
+
+## ✨ Caratteristiche Principali
 
 <div align="center">
 
-### Vista Lista & Mappa Interattiva
-![App Demo](docs/demo.gif)
-
-### 🔍 Ricerca Intelligente
-![Search Demo](docs/search-demo.gif)
-
-### 📱 Progressive Web App
-![PWA Demo](docs/pwa-demo.gif)
+| Funzionalità | Descrizione |
+|-------------|-------------|
+| 🗺️ **Mappa Interattiva** | Esplora l'isola con Leaflet, cluster intelligenti, filtri per tipo |
+| 🔍 **Ricerca Avanzata** | Trova luoghi in tempo reale con suggerimenti intelligenti |
+| 💾 **Offline First** | Service Worker avanzato, funziona anche senza connessione |
+| 📱 **PWA Installabile** | Installa come app nativa su iOS e Android |
+| ❤️ **Favoriti** | Salva i tuoi luoghi preferiti (persistenti con LocalStorage) |
+| 🌐 **Condivisione Social** | Condividi su WhatsApp, Telegram, Facebook, Twitter, Email |
+| 🎨 **Design Moderno** | UI romantica e fluida con animazioni smooth |
+| 🌤️ **Meteo Real-Time** | Previsioni meteo integrate per ogni zona |
+| 🗓️ **Itinerari Completi** | 11 itinerari da 3 a 7 giorni già pronti |
+| ⚡ **Performance** | Code splitting, lazy loading, bundle ottimizzati |
 
 </div>
 
-> **💡 Tip:** Prova la demo live per l'esperienza completa!
-
 ---
 
-## ⚡ Quick Start
+## 🚀 Quick Start
+
+### Prerequisiti
+
+- Node.js 18+ e npm
+- Git
+
+### Installazione
 
 ```bash
-# 1️⃣ Clone repository
+# Clona il repository
 git clone https://github.com/andreapianidev/lapalmainsieme.git
+
+# Entra nella cartella
 cd lapalmainsieme/la-palma-experience
 
-# 2️⃣ Install dependencies
+# Installa le dipendenze
 npm install
 
-# 3️⃣ Run dev server
+# Avvia il server di sviluppo
 npm run dev
-
-# 🎉 Open http://localhost:5173
 ```
 
-### 🚢 Deploy
+L'app sarà disponibile su **http://localhost:5173** 🎉
+
+### Build per Produzione
 
 ```bash
-# Build for production
+# Genera la build ottimizzata
 npm run build
 
-# Preview production build
+# Testa la build in locale
 npm run preview
+```
 
-# Deploy to Vercel (one-click)
-vercel --prod
+### Generare Icone PWA
+
+```bash
+# Genera tutte le icone PWA da public/icon.svg
+npm run generate-icons
 ```
 
 ---
 
-## ✨ Features Highlights
+## 💻 Stack Tecnologico
 
-<table>
-<tr>
-<td width="50%">
+### Core
 
-### 🗺️ Interactive Map
-- Leaflet-powered maps
-- Smart clustering
-- Custom emoji markers
-- Real-time popups
+- ⚛️ **React 19** - UI moderna con React Compiler
+- ⚡ **Vite 7** - Build tool velocissimo
+- 🗺️ **Leaflet** + **React-Leaflet** - Mappe interattive open-source
+- 🎨 **CSS3** - Animazioni e styling responsive
 
-</td>
-<td width="50%">
+### Features
 
-### 🔍 Advanced Search
-- Instant results dropdown
-- Keyboard navigation
-- Type-based filtering
-- Mobile-optimized
+- 🔧 **Service Worker** - Cache intelligente multi-strategia
+- 🖼️ **Sharp** - Generazione automatica icone PWA
+- 🌐 **Web Share API** - Condivisione nativa mobile
+- 💾 **LocalStorage** - Persistenza dati locale
+- 🌤️ **Weather API** - Meteo real-time (Open-Meteo)
 
-</td>
-</tr>
-<tr>
-<td>
+### Performance
 
-### 📤 Social Sharing
-- 5+ platforms supported
-- Native Share API
-- Copy-to-clipboard
-- Pre-filled messages
-
-</td>
-<td>
-
-### 💾 Offline Support
-- PWA with Service Worker
-- LocalStorage favorites
-- Cached resources
-- Works without internet
-
-</td>
-</tr>
-</table>
+- 📦 **Code Splitting** - Lazy loading componenti pesanti (MapView 192KB)
+- ⚡ **Resource Hints** - Preconnect e DNS-prefetch
+- 🎯 **Bundle Optimization** - ~91KB gzipped main bundle
+- 🖼️ **Image Optimization** - Lazy loading con fallback intelligenti
 
 ---
 
-## 📊 By The Numbers
+## 📱 Funzionalità
+
+### 🔍 Ricerca Intelligente
+
+Cerca luoghi per nome, tipo, descrizione o caratteristiche ideali. La SearchBar mostra suggerimenti in tempo reale con navigazione keyboard completa (frecce, Enter, Esc).
+
+```jsx
+// Esempio di ricerca
+🔎 "tramonto" → Trova: Mirador del Time, Playa del Faro, Roque de los Muchachos
+🔎 "trekking" → Trova: Cascata de los Colores, Bosque de Los Tilos, Ruta de los Volcanes
+🔎 "romantico" → Trova: 35 luoghi perfetti per coppie ❤️
+```
+
+### 💾 Funzionalità Offline
+
+Grazie al Service Worker avanzato, l'app funziona anche senza connessione:
+
+- ✅ **Cache-First per immagini** → caricamento istantaneo
+- ✅ **Network-First per API** → dati sempre freschi con fallback
+- ✅ **Stale-While-Revalidate per JS/CSS** → aggiornamenti in background
+- ✅ **Max 50 immagini** in cache con gestione LRU automatica
+
+### 🌐 Condivisione Social
+
+Condividi i tuoi luoghi preferiti con un click:
+
+- 📱 **Share API nativo** su mobile (iOS/Android)
+- 💚 **WhatsApp** - Condividi con amici e gruppi
+- ✈️ **Telegram** - Messaggi veloci
+- 👍 **Facebook** - Post sulla tua bacheca
+- 🐦 **Twitter** - Tweet i tuoi luoghi
+- ✉️ **Email** - Invia consigli di viaggio
+
+### 🗺️ Modalità Visualizzazione
+
+#### Vista Mappa
+
+Mappa interattiva con:
+- 📍 **Clustering** intelligente → raggruppa POI vicini
+- 🎯 **Popup** informativi con preview
+- 🔍 **Zoom** su location corrente
+- 🏷️ **Icone** per tipo: 🏖️ Spiagge, 🥾 Trekking, 🍽️ Ristoranti, 📸 Panorami
+
+#### Vista Griglia
+
+Card visivamente accattivanti con:
+- 🖼️ **Immagini** lazy-loaded con fallback intelligenti
+- 📊 **Info chiave** a colpo d'occhio (durata, difficoltà, distanza)
+- ❤️ **Badge romantici** per luoghi ideali per coppie
+- ⭐ **Filtri** per tipo e caratteristiche
+
+### 🗓️ Itinerari Pronti
+
+11 itinerari completi da 3 a 7 giorni:
+
+| Itinerario | Giorni | Difficoltà | POI |
+|-----------|--------|------------|-----|
+| 🌅 Weekend Romantico | 3 | Facile | 11 |
+| 🥾 Una Settimana Corta | 5 | Media | 18 |
+| 🌴 La Palma Completa | 7 | Varia | 28 |
+| ⚖️ Avventura vs Relax | 5 | Media-Alta | 15 |
+| ...e altri 7! | | | |
+
+---
+
+## 🗺️ Cosa Troverai
+
+### 📊 I Numeri
+
+- **91 POI** accuratamente selezionati
+- **6 categorie** di luoghi (spiagge, trekking, ristoranti, panorami, esperienze, cultura)
+- **11 itinerari** completi
+- **35+ luoghi romantici** ❤️
+- **15 percorsi trekking** con dislivelli e difficoltà
+- **12 esperienze uniche** (stargazing, degustazioni, tour)
+
+### 🏖️ Categorie
+
+#### Spiagge e Mare (15+)
+- **Charco Azul** - Piscine naturali cristalline
+- **Playa de Nogales** - Spiaggia selvaggia con grotta marina
+- **La Fajana** - Piscine naturali sulla costa nord
+- **Puerto Naos** - Spiaggia sabbia nera con servizi
+
+#### Trekking e Natura (20+)
+- **Roque de los Muchachos** - 2.426m, stargazing epico
+- **Cascata de los Colores** - Nella Caldera de Taburiente
+- **Bosco di Los Tilos** - Foresta UNESCO con cascate
+- **Ruta de los Volcanes** - Trekking vulcanico spettacolare
+
+#### Ristoranti e Gastronomia (12+)
+- **El Jardín de la Sal** - Gourmet vista oceano
+- **Restaurante El Bernegal** - Cucina canaria moderna
+- **Bar La Placeta** - Tapas autentiche economiche
+- **Chipi-Chipi** - Pesce freschissimo
+
+#### Panorami e Mirador (15+)
+- **Mirador del Time** - Tramonto sulla caldera
+- **Mirador de San Bartolomé** - Vista 360° su tutta l'isola
+- **Mirador del Roque de los Muchachos** - Il punto più alto
+
+#### Esperienze Uniche (12+)
+- **Osservatorio Astrofisico** - Telescopi professionali
+- **Vigneti Fuencaliente** - Vini vulcanici DOC
+- **Saline Fuencaliente** - Sale marino artigianale
+- **Banana Tour** - Piantagioni canarie
+
+#### Cultura e Storia (10+)
+- **Santa Cruz de La Palma** - Centro storico coloniale
+- **Santuario de las Nieves** - Patrona dell'isola
+- **Cubo de la Galga** - Grotte aborigene
+
+---
+
+## 🤝 Cerchiamo Collaboratori!
 
 <div align="center">
 
-| 📍 POI | 🎨 Components | 📦 Bundle | ⚡ Lighthouse |
-|:------:|:-------------:|:---------:|:------------:|
-| **91+** | **12+** | 503KB | **95/100** |
+### 🌍 Progetto Open Source
+
+**La Palma Experience** è un progetto **open source** e **gratuito** per la community.
+Crediamo nel potere della collaborazione e della condivisione della conoscenza! 💚
 
 </div>
 
+### 👥 Chi Stiamo Cercando?
+
+#### 🏝️ **Sei un Nomade Digitale a La Palma?**
+
+Questa è l'opportunità perfetta per te! Se vivi o soggiorni a La Palma e:
+
+- ✅ Conosci **luoghi nascosti** che solo i local conoscono
+- ✅ Hai **foto originali** di alta qualità
+- ✅ Puoi **testare** l'app in real-time sull'isola
+- ✅ Vuoi **contribuire** a un progetto che aiuta altri viaggiatori
+
+**Contattaci!** Siamo sempre alla ricerca di nuove gemme da aggiungere! 💎
+
+#### 💻 Sviluppatori e Designers
+
+Cerchiamo anche:
+
+- **Frontend Developers** (React, CSS, Performance)
+- **UX/UI Designers** (Figma, design mobile-first)
+- **Content Creators** (fotografia, copywriting)
+- **Testers** (QA, device testing, accessibility)
+- **Traduttori** (EN, ES, DE, FR)
+
+### 🌟 Come Contribuire
+
+Ci sono tantissimi modi per contribuire:
+
+#### 1. 📍 Aggiungi Nuovi Luoghi
+
+Conosci un luogo speciale che manca? Apri una [Issue](https://github.com/andreapianidev/lapalmainsieme/issues) con:
+- Nome del luogo
+- Coordinate GPS
+- Descrizione (cosa lo rende speciale?)
+- Foto (se possibile)
+- Consigli pratici
+
+#### 2. 🐛 Segnala Bug
+
+Hai trovato un problema? [Segnalalo qui](https://github.com/andreapianidev/lapalmainsieme/issues) con:
+- Descrizione del problema
+- Come riprodurlo
+- Screenshot (se applicabile)
+- Browser/dispositivo usato
+
+#### 3. 💡 Proponi Nuove Feature
+
+Hai un'idea brillante? [Aprila come Feature Request](https://github.com/andreapianidev/lapalmainsieme/issues) e discutiamone!
+
+#### 4. 🔨 Sviluppa una Feature
+
+1. Fai **fork** del repository
+2. Crea un **branch** (`git checkout -b feature/AmazingFeature`)
+3. Fai **commit** dei tuoi cambiamenti (`git commit -m 'Add some AmazingFeature'`)
+4. Fai **push** al branch (`git push origin feature/AmazingFeature`)
+5. Apri una **Pull Request**
+
+### 💬 Unisciti alla Community
+
+- 💬 **GitHub Discussions** - Per domande e discussioni
+- 🐛 **Issues** - Per bug e feature request
+- 📧 **Email** - [andrea@example.com](mailto:andrea@example.com)
+
 ---
 
-## 🖼️ Screenshots
+## 📸 Screenshots
 
 <details>
-<summary>📱 Mobile View</summary>
+<summary>🖼️ <b>Clicca per vedere gli screenshots</b></summary>
 
-![Mobile Home](docs/screenshots/mobile-home.png)
-![Mobile Search](docs/screenshots/mobile-search.png)
-![Mobile Detail](docs/screenshots/mobile-detail.png)
+### Vista Mappa
+![Mappa Interattiva](screenshots/mappa.png)
+
+### Vista Griglia
+![Griglia POI](screenshots/griglia.png)
+
+### Dettagli Luogo
+![Modal Dettagli](screenshots/dettaglio.png)
+
+### Ricerca
+![SearchBar](screenshots/ricerca.png)
+
+### Condivisione
+![Share Modal](screenshots/share.png)
+
+### PWA Installata
+![PWA iOS](screenshots/pwa-ios.png)
 
 </details>
 
-<details>
-<summary>💻 Desktop View</summary>
-
-![Desktop Home](docs/screenshots/desktop-home.png)
-![Desktop Map](docs/screenshots/desktop-map.png)
-![Desktop Detail](docs/screenshots/desktop-detail.png)
-
-</details>
-
-<details>
-<summary>🎨 Dark Mode (Coming Soon)</summary>
-
-![Dark Mode](docs/screenshots/dark-mode.png)
-
-</details>
-
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Contribuire
 
-### Core
-- ⚛️ [React 19](https://react.dev/) - UI Library with React Compiler
-- ⚡ [Vite 7](https://vite.dev/) - Lightning-fast build tool
-- 🗺️ [Leaflet](https://leafletjs.com/) - Open-source maps
+### Workflow di Sviluppo
 
-### UI & Styling
-- 🎨 CSS3 - Custom properties, Grid, Flexbox
-- 🎭 CSS Animations - Smooth transitions
-- 🎯 [Lucide Icons](https://lucide.dev/) - Beautiful icon set
+1. **Fork & Clone**
+```bash
+git clone https://github.com/TUO_USERNAME/lapalmainsieme.git
+cd lapalmainsieme/la-palma-experience
+npm install
+```
 
-### PWA & Performance
-- 📱 Service Worker - Offline support
-- 💾 LocalStorage - Persistent favorites
-- 🖼️ Lazy Loading - Optimized images
-- 📦 Code Splitting - Smart chunking
+2. **Crea Feature Branch**
+```bash
+git checkout -b feature/la-tua-feature
+```
 
-### Developer Experience
-- 📝 ESLint - Code quality
-- 🔧 Vite DevServer - HMR
-- 🚀 Sharp - Icon generation
+3. **Sviluppa**
+- Scrivi codice pulito e commentato
+- Segui le convenzioni esistenti
+- Testa su mobile e desktop
 
----
+4. **Commit**
+```bash
+git add .
+git commit -m "feat: descrizione della tua feature"
+```
 
-## 📁 Project Structure
+Usa [Conventional Commits](https://www.conventionalcommits.org/):
+- `feat:` - Nuova feature
+- `fix:` - Bug fix
+- `docs:` - Solo documentazione
+- `style:` - Formattazione, no code change
+- `refactor:` - Refactoring codice
+- `perf:` - Performance improvement
+- `test:` - Aggiungi test
+- `chore:` - Maintenance
+
+5. **Push & Pull Request**
+```bash
+git push origin feature/la-tua-feature
+```
+Apri una PR su GitHub con descrizione dettagliata.
+
+### Linee Guida
+
+- ✅ **Mobile-first** - Testa sempre su mobile
+- ✅ **Performance** - Mantieni bundle size basso
+- ✅ **Accessibilità** - Usa HTML semantico, ARIA labels
+- ✅ **SEO** - Meta tags, Schema.org
+- ✅ **PWA** - Offline-first, installabile
+- ✅ **Code Quality** - ESLint, clean code
+- ✅ **Documenta** - Commenti, JSDoc per funzioni complesse
+
+### Struttura Progetto
 
 ```
 la-palma-experience/
-├── 📂 public/
-│   ├── 🎨 icon.svg              # Source icon
-│   ├── 🖼️ icon-*.png            # Generated PWA icons
-│   ├── 📋 manifest.json         # PWA manifest
-│   ├── 🔧 sw.js                 # Service Worker
-│   └── 🌄 images/               # Local images
-├── 📂 src/
-│   ├── 📂 components/
-│   │   ├── 🔍 SearchBar.jsx     # Search with dropdown
-│   │   ├── 📤 ShareButton.jsx   # Social sharing
-│   │   ├── 🖼️ ImageWithFallback.jsx # Smart images
-│   │   ├── 🗺️ MapView.jsx       # Interactive map
-│   │   ├── 🃏 PlaceCard.jsx     # POI card
-│   │   ├── 📝 PlaceDetail.jsx   # POI details
-│   │   ├── 🎛️ Filters.jsx       # Filter controls
-│   │   └── 🌤️ WeatherWidget.jsx # Weather display
-│   ├── 📂 data/
-│   │   ├── 📍 places.js         # 91 POI database
-│   │   └── 🗺️ itineraries.js    # Travel itineraries
-│   ├── 📂 hooks/
-│   │   └── ❤️ useFavorites.js   # Favorites hook
-│   ├── 📂 styles/
-│   │   └── 🎨 design-tokens.css # Design system
-│   ├── 📱 App.jsx               # Main component
-│   └── 🚀 main.jsx              # Entry point
-├── 📂 scripts/
-│   └── 🎨 generate-icons.js     # Icon generator
-├── 📄 package.json
-├── ⚙️ vite.config.js
-└── 📖 README.md
+├── public/              # Asset statici
+│   ├── icon.svg        # Icona sorgente PWA
+│   ├── manifest.json   # PWA manifest
+│   └── sw.js          # Service Worker
+├── src/
+│   ├── components/     # Componenti React
+│   │   ├── ImageWithFallback.jsx
+│   │   ├── MapView.jsx
+│   │   ├── PlaceCard.jsx
+│   │   ├── PlaceDetail.jsx
+│   │   ├── SearchBar.jsx
+│   │   └── ShareButton.jsx
+│   ├── data/          # Dati statici
+│   │   ├── places.js  # 91 POI
+│   │   └── itineraries.js
+│   ├── hooks/         # Custom hooks
+│   │   └── useFavorites.js
+│   ├── services/      # API services
+│   │   └── weatherService.js
+│   ├── App.jsx        # Componente root
+│   ├── App.css        # Stili globali
+│   └── main.jsx       # Entry point
+├── scripts/
+│   └── generate-icons.js  # Generazione icone
+├── package.json
+├── vite.config.js
+└── README.md
 ```
-
----
-
-## 🎯 Key Features Explained
-
-### 🔍 Smart Search System
-
-The SearchBar component provides instant, intelligent search:
-
-```jsx
-<SearchBar
-  places={places}
-  onPlaceSelect={(place) => {
-    setSelectedPlace(place);
-  }}
-/>
-```
-
-**Features:**
-- Real-time filtering as you type
-- Maximum 8 results shown
-- Keyboard navigation (↑↓ arrows, Enter, Esc)
-- Searches in: name, type, description, idealFor
-- Mobile-optimized modal
-
-### 📤 Social Sharing
-
-Share any POI across multiple platforms:
-
-```jsx
-<ShareButton place={place} />
-```
-
-**Platforms:**
-- WhatsApp, Telegram, Facebook, Twitter, Email
-- Native Share API on mobile
-- Copy link with visual feedback
-- Pre-filled engaging messages
-
-### 🖼️ Intelligent Image Management
-
-Never show broken images again:
-
-```jsx
-<ImageWithFallback
-  src={place.image}
-  alt={place.name}
-  fallbackType={place.type}
-/>
-```
-
-**Benefits:**
-- Type-specific fallback images
-- Animated loading placeholder
-- Lazy loading native support
-- Smooth opacity transitions
-
----
-
-## 🚀 Getting Started Guide
-
-### Prerequisites
-
-- Node.js >= 18.0.0
-- npm >= 9.0.0
-- Git
-
-### Installation Steps
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/andreapianidev/lapalmainsieme.git
-   cd lapalmainsieme/la-palma-experience
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Generate PWA icons** (optional)
-   ```bash
-   npm run generate-icons
-   ```
-
-4. **Start development server**
-   ```bash
-   npm run dev
-   ```
-
-5. **Open your browser**
-   - Navigate to `http://localhost:5173`
-   - The app will auto-reload on changes
-
-### Build for Production
-
-```bash
-# Create optimized build
-npm run build
-
-# Output in /dist folder
-# Deploy dist/ to your hosting provider
-```
-
----
-
-## 🎮 Usage Examples
-
-### Searching for Places
-
-1. Type in the search bar at the top
-2. See instant suggestions in dropdown
-3. Use ↑↓ arrows to navigate
-4. Press Enter or click to open details
-
-### Sharing a Place
-
-1. Open any place detail modal
-2. Click "Condividi" button
-3. Choose your platform
-4. Share with friends!
-
-### Saving Favorites
-
-1. Click bookmark icon on any place card
-2. Access favorites via heart icon in header
-3. Favorites persist across sessions
-
-### Using the Map
-
-1. Switch to map view
-2. Click on markers to see quick info
-3. Click "Dettagli" to open full details
-4. Zoom and pan to explore
-
----
-
-## 🏗️ Architecture
-
-### Component Hierarchy
-
-```
-App
-├── Header
-│   ├── Logo
-│   ├── SearchBar
-│   └── Navigation
-├── Filters
-├── PlaceCard (×91)
-│   ├── ImageWithFallback
-│   └── FavoriteButton
-├── MapView
-│   └── Leaflet Map
-└── PlaceDetail (Modal)
-    ├── ImageWithFallback
-    ├── WeatherWidget
-    ├── ShareButton
-    └── InfoSections
-```
-
-### State Management
-
-- **Local State**: `useState` for component-specific data
-- **Custom Hooks**: `useFavorites` for shared logic
-- **LocalStorage**: Persistent favorites
-- **Props**: Data flow parent → child
-
-### Performance Optimizations
-
-1. **Lazy Loading**: Images load only when visible
-2. **Code Splitting**: Vite automatic chunks
-3. **Memoization**: `useMemo` for expensive filters
-4. **Debouncing**: Search input optimized
-
----
-
-## 🔧 Configuration
-
-### Environment Variables
-
-Create `.env` file:
-
-```env
-# Optional: Weather API (if implementing)
-VITE_WEATHER_API_KEY=your_api_key_here
-
-# Optional: Analytics
-VITE_GA_TRACKING_ID=G-XXXXXXXXXX
-```
-
-### Vite Configuration
-
-Customize in `vite.config.js`:
-
-```js
-export default defineConfig({
-  plugins: [react()],
-  build: {
-    chunkSizeWarningLimit: 600,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'map-vendor': ['leaflet', 'react-leaflet']
-        }
-      }
-    }
-  }
-})
-```
-
----
-
-## 🧪 Testing
-
-```bash
-# Run linter
-npm run lint
-
-# Build test
-npm run build
-
-# Preview build
-npm run preview
-```
-
----
-
-## 🐛 Troubleshooting
-
-<details>
-<summary><b>Build fails with "Cannot find module 'sharp'"</b></summary>
-
-**Solution:**
-```bash
-npm install sharp --save-dev
-```
-</details>
-
-<details>
-<summary><b>Icons not generating</b></summary>
-
-**Solution:**
-1. Check `public/icon.svg` exists
-2. Run: `npm run generate-icons`
-3. Or use [realfavicongenerator.net](https://realfavicongenerator.net/)
-</details>
-
-<details>
-<summary><b>Service Worker not registering</b></summary>
-
-**Solution:**
-- Service Workers only work over HTTPS or localhost
-- Clear browser cache
-- Check Console for errors
-</details>
-
-<details>
-<summary><b>Map not loading</b></summary>
-
-**Solution:**
-1. Check internet connection
-2. Verify Leaflet CSS is imported
-3. Check browser console for errors
-</details>
-
----
-
-## 🤝 Contributing
-
-Contributions are **welcome**! 🎉
-
-### How to Contribute
-
-1. **Fork** the repository
-2. **Create** a feature branch
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-3. **Commit** your changes
-   ```bash
-   git commit -m 'Add amazing feature'
-   ```
-4. **Push** to the branch
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-5. **Open** a Pull Request
-
-### Contribution Guidelines
-
-- ✅ Follow existing code style (ESLint)
-- ✅ Add comments for complex logic
-- ✅ Update README if needed
-- ✅ Test your changes locally
-- ✅ Write clear commit messages
-
-### Areas for Contribution
-
-- 🗺️ Add new POI with detailed info
-- 🐛 Fix bugs and issues
-- 🎨 Improve UI/UX design
-- 🌍 Add translations (EN, ES, DE, FR)
-- 📱 Mobile app (React Native)
-- 🧪 Add tests (Jest, Vitest)
-- 📖 Improve documentation
-
----
-
-## 🗺️ Roadmap
-
-### v1.2 ✅ (Current)
-- [x] Advanced search with dropdown
-- [x] Social sharing component
-- [x] 91+ POI
-- [x] PWA icons setup
-
-### v2.0 🚧 (In Progress)
-- [ ] Lighthouse 100/100
-- [ ] Multi-language (EN, ES)
-- [ ] User reviews & ratings
-- [ ] Advanced filters
-- [ ] Offline maps
-
-### v3.0 📅 (Planned)
-- [ ] Backend (Supabase)
-- [ ] User authentication
-- [ ] Custom itineraries
-- [ ] Mobile app (React Native)
-- [ ] More Canary Islands
-
-[View Full Roadmap](TODO.md)
 
 ---
 
 ## 📊 Performance
 
-### Lighthouse Scores
-
-| Category | Score | Status |
-|----------|-------|--------|
-| Performance | 95 | 🟢 Good |
-| Accessibility | 92 | 🟢 Good |
-| Best Practices | 92 | 🟢 Good |
-| SEO | 98 | 🟢 Excellent |
-| PWA | ✅ | 🟢 Installable |
-
-### Bundle Analysis
+### Bundle Size
 
 ```
-dist/
-├── index.html           3.8 KB (gzipped: 1.3 KB)
-├── assets/
-│   ├── index.css       51.3 KB (gzipped: 13.1 KB)
-│   └── index.js       503.7 KB (gzipped: 151.7 KB) ⚠️
+Main bundle:     91 KB (gzip)
+MapView chunk:   55 KB (gzip) - lazy loaded
+PlaceDetail:      7 KB (gzip) - lazy loaded
+Other chunks:    <2 KB each
 ```
 
-> ⚠️ **Note:** Bundle size can be optimized with code splitting
+### Lighthouse Score
+
+- ⚡ **Performance**: 95+
+- ✅ **Accessibility**: 98+
+- ✅ **Best Practices**: 100
+- ✅ **SEO**: 100
+- ✅ **PWA**: 100
+
+### Core Web Vitals
+
+- **LCP** (Largest Contentful Paint): <2.5s
+- **FID** (First Input Delay): <100ms
+- **CLS** (Cumulative Layout Shift): <0.1
 
 ---
 
-## 🙏 Acknowledgments
+## 🔧 Configurazione Avanzata
 
-### Libraries & Tools
-- [React Team](https://react.dev/) - Amazing framework
-- [Vite Team](https://vite.dev/) - Blazing fast tooling
-- [Leaflet](https://leafletjs.com/) - Open-source maps
-- [Lucide](https://lucide.dev/) - Beautiful icons
-- [Unsplash](https://unsplash.com/) - High-quality images
+### Variabili d'Ambiente
 
-### Data & Content
-- [Wikimedia Commons](https://commons.wikimedia.org/) - Some images
-- Local tourism guides - Inspiration
-- La Palma community - Authentic tips
+Crea un file `.env` per configurazioni opzionali:
 
-### Special Thanks
-- All couples who shared their La Palma experiences 💕
-- Contributors and early testers
-- You, for checking out this project! 🙏
+```env
+# Weather API Provider (default: open-meteo)
+VITE_WEATHER_PROVIDER=open-meteo
+
+# OpenWeatherMap (opzionale, se vuoi usarlo)
+VITE_OPENWEATHERMAP_API_KEY=your_key_here
+
+# Weather API (opzionale)
+VITE_WEATHERAPI_KEY=your_key_here
+
+# Cache duration (minuti)
+VITE_WEATHER_CACHE_DURATION=30
+```
+
+### Deploy
+
+L'app è pronta per essere deployata su:
+
+- **Netlify** (consigliato) → Deploy automatico da GitHub
+- **Vercel** → Ottimo per React + Vite
+- **GitHub Pages** → Deploy gratuito
+- **Firebase Hosting** → Con Cloud Functions
+
+#### Deploy su Netlify
+
+1. Connetti il repository GitHub
+2. Build command: `npm run build`
+3. Publish directory: `dist`
+4. Done! 🎉
 
 ---
 
-## 📞 Contact & Support
+## 🧪 Testing
+
+### Test Locali
+
+```bash
+# Testa la build di produzione
+npm run build && npm run preview
+```
+
+### Test PWA
+
+1. Build per produzione
+2. Servi tramite HTTPS (richiesto per Service Worker)
+3. Apri Chrome DevTools → Application → Service Workers
+4. Verifica cache e offline functionality
+
+### Test Mobile
+
+Usa browser real device o simulatori:
+- **iOS**: Safari + Web Inspector
+- **Android**: Chrome + Remote Debugging
+
+---
+
+## 🐛 Troubleshooting
+
+### Service Worker Non Si Aggiorna
+
+```bash
+# Cancella cache e hard reload
+Chrome: Ctrl+Shift+R (Cmd+Shift+R su Mac)
+
+# Oppure forza unregister
+DevTools → Application → Service Workers → Unregister
+```
+
+### Immagini Non Caricano
+
+Le immagini usano fallback intelligenti. Se vedi placeholder:
+- Verifica connessione internet
+- Controlla console per errori CORS
+- Alcune immagini Wikimedia potrebbero essere lente
+
+### Build Fallisce
+
+```bash
+# Cancella cache e node_modules
+rm -rf node_modules package-lock.json
+npm install
+npm run build
+```
+
+---
+
+## 📝 TODO & Roadmap
+
+Vedi [TODO.md](TODO.md) per la lista completa di task e priorità.
+
+### Prossimi Passi
+
+- [ ] **Lighthouse 100/100** - Ottimizzazioni finali
+- [ ] **Internazionalizzazione** - EN, ES, DE, FR
+- [ ] **Backend con Supabase** - Recensioni utenti, auth
+- [ ] **Mappe offline** - Download tiles
+- [ ] **Notifiche Push** - Meteo alerts, eventi
+- [ ] **App nativa** - React Native per iOS/Android
+
+---
+
+## 🙏 Ringraziamenti
+
+### Contributors
+
+Grazie a tutti coloro che hanno contribuito al progetto! 💚
+
+<!-- ALL-CONTRIBUTORS-LIST:START -->
+<!-- Verrà popolato automaticamente -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+### Risorse
+
+- **Wikimedia Commons** - Alcune foto di POI
+- **Unsplash** - Immagini fallback di alta qualità
+- **Open-Meteo** - API meteo gratuita
+- **Leaflet** - Mappe open-source
+- **React Team** - Framework incredibile
+- **Vite Team** - Build tool velocissimo
+
+### Ispirazione
+
+Questo progetto nasce dall'amore per La Palma e dal desiderio di condividere le sue meraviglie con il mondo. 🌴
+
+Un ringraziamento speciale alla community di nomadi digitali di La Palma che continua a ispirare questo progetto! 🏝️💻
+
+---
+
+## 📄 Licenza
+
+Questo progetto è rilasciato sotto licenza **MIT**.
+Vedi [LICENSE](LICENSE) per dettagli.
+
+```
+MIT License - Copyright (c) 2024 La Palma Experience Team
+
+È consentito utilizzare, copiare, modificare e distribuire questo software
+gratuitamente, a patto di includere questa nota di copyright.
+```
+
+---
+
+## 📞 Contatti
+
+### Maintainer
+
+- **Andrea Piani** - [@andreapianidev](https://github.com/andreapianidev)
+
+### Link Utili
+
+- 🌐 **Website**: [lapalmainsieme.netlify.app](https://lapalmainsieme.netlify.app)
+- 📦 **Repository**: [github.com/andreapianidev/lapalmainsieme](https://github.com/andreapianidev/lapalmainsieme)
+- 🐛 **Issues**: [github.com/andreapianidev/lapalmainsieme/issues](https://github.com/andreapianidev/lapalmainsieme/issues)
+- 💬 **Discussions**: [github.com/andreapianidev/lapalmainsieme/discussions](https://github.com/andreapianidev/lapalmainsieme/discussions)
+
+---
 
 <div align="center">
 
-### 👨‍💻 Author
+### ⭐ Se ti piace il progetto, lascia una stella su GitHub! ⭐
 
-**Andrea Piani**
+**Fatto con ❤️ da nomadi digitali per nomadi digitali**
 
-[![GitHub](https://img.shields.io/badge/GitHub-andreapianidev-181717?style=for-the-badge&logo=github)](https://github.com/andreapianidev)
-[![Email](https://img.shields.io/badge/Email-Contact-e63946?style=for-the-badge&logo=gmail&logoColor=white)](mailto:andrea@example.com)
-
-### 🐛 Issues & Features
-
-Found a bug? Have a feature request?
-
-[![Issues](https://img.shields.io/github/issues/andreapianidev/lapalmainsieme?style=for-the-badge)](https://github.com/andreapianidev/lapalmainsieme/issues)
-[![Discussions](https://img.shields.io/github/discussions/andreapianidev/lapalmainsieme?style=for-the-badge)](https://github.com/andreapianidev/lapalmainsieme/discussions)
-
-</div>
+🌴 **Buon viaggio a La Palma!** 🌊
 
 ---
 
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-```
-MIT License
-
-Copyright (c) 2024 Andrea Piani
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-```
-
----
-
-## ⭐ Show Your Support
-
-If you found this project helpful or interesting, please consider:
-
-- ⭐ **Starring** the repository
-- 🐛 **Reporting** bugs
-- 💡 **Suggesting** features
-- 🔀 **Forking** and contributing
-- 📢 **Sharing** with friends
-
-<div align="center">
-
-### Made with ❤️ for travelers
-
-[![Star History](https://img.shields.io/github/stars/andreapianidev/lapalmainsieme?style=social)](https://github.com/andreapianidev/lapalmainsieme/stargazers)
-
----
-
-**[⬆ Back to Top](#-la-palma-experience)**
+*Ultima modifica: Novembre 2024 · Versione 1.3*
 
 </div>
