@@ -13,6 +13,7 @@ const MapView = lazy(() => import('./components/MapView'));
 const PlaceDetail = lazy(() => import('./components/PlaceDetail'));
 const AnimatedBackground = lazy(() => import('./components/AnimatedBackground'));
 const SearchBar = lazy(() => import('./components/SearchBar'));
+const ItineraryDetail = lazy(() => import('./components/ItineraryDetail'));
 
 function App() {
   const [viewMode, setViewMode] = useState('grid'); // 'grid', 'map', 'itineraries'
@@ -24,6 +25,7 @@ function App() {
   const [userLocation, setUserLocation] = useState(null);
   const [sortByDistance, setSortByDistance] = useState(false);
   const [activeItinerary, setActiveItinerary] = useState(null);
+  const [selectedItinerary, setSelectedItinerary] = useState(null);
 
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => {
@@ -288,8 +290,7 @@ function App() {
           <div className="places-grid">
             {itineraries.map(itinerary => (
               <div key={itinerary.id} className="place-card" onClick={() => {
-                setActiveItinerary(itinerary);
-                setViewMode('map');
+                setSelectedItinerary(itinerary);
               }}>
                 <div className="card-image-container">
                   <img src={itinerary.image} alt={itinerary.title} loading="lazy" />
@@ -412,6 +413,42 @@ function App() {
           <PlaceDetail
             place={selectedPlace}
             onClose={() => setSelectedPlace(null)}
+          />
+        </Suspense>
+      )}
+
+      {/* Itinerary Detail Modal */}
+      {selectedItinerary && (
+        <Suspense fallback={
+          <div className="modal-loading" style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(0, 0, 0, 0.7)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 2000
+          }}>
+            <div style={{
+              background: 'white',
+              padding: '40px',
+              borderRadius: '12px',
+              textAlign: 'center'
+            }}>
+              <div style={{ animation: 'pulse 1.5s ease-in-out infinite' }}>
+                Caricamento itinerario...
+              </div>
+            </div>
+          </div>
+        }>
+          <ItineraryDetail
+            itinerary={selectedItinerary}
+            onClose={() => setSelectedItinerary(null)}
+            onPlaceClick={(place) => setSelectedPlace(place)}
+            allItineraries={itineraries}
           />
         </Suspense>
       )}
